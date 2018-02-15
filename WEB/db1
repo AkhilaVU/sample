@@ -1,0 +1,35 @@
+ desc employ61;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMP_NO 				   NOT NULL NUMBER(10)
+ EMP_NAME					    VARCHAR2(10)
+ DOB						    DATE
+ JOB						    VARCHAR2(20)
+ MANAGER					    VARCHAR2(10)
+ HIRE_DATE					    DATE
+ SALARY 					    NUMBER(15)
+ DEPT_NO					    VARCHAR2(10)
+
+
+ select emp_name from employ61 where dept_no='101' and dept_no='104';
+
+ select distinct job from employ61;
+
+JOB
+--------------------
+project_dvlpr
+web_developer
+web-developer
+android
+
+select emp_name,salary from employ61 where salary between 1000 and 35000;
+
+EMP_NAME       SALARY
+---------- ----------
+vishnu		10000
+ananya		15000
+akash		15000
+amal		15000
+arjun		15000
+abhi		15000
+

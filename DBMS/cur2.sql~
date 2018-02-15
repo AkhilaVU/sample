@@ -1,0 +1,27 @@
+DECLARE 
+   c_no client_master61.client_no%type; 
+   c_name client_master61.name%type; 
+   c_add1 client_master61.address1%type; 
+   c_add2 client_master61.address2%type;
+   c_city client_master61.city%type;
+   c_pin client_master61.pincode%type;
+   c_state client_master61.state%type;
+   c_bal client_master61.bal_due%type;
+ client_mastr client_mastr%rowtype; 
+
+   CURSOR client_mastr is SELECT client_no,name,address1,address2,city,pincode,state,bal_due FROM client_master61 WHERE state='maharashtra'; 
+  
+BEGIN 
+
+   OPEN client_mastr; 
+   LOOP 
+   FETCH client_mastr into c_no,c_name,c_add1,c_add2,c_city,c_pin,c_state,c_bal; 
+      EXIT WHEN client_mastr%notfound; 
+
+    dbms_output.put_line(c_no || '  ' || c_name || '   ' || c_add1|| '  ' || c_add2 || '  ' ||c_city  || '  ' || c_pin || '  ' ||  c_state || '  ' ||c_bal ); 
+
+   END LOOP; 
+   CLOSE client_mastr;  
+END; 
+/
+

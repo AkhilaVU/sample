@@ -1,0 +1,23 @@
+DECLARE 
+   c_id prodct_mastr61.product_no%type; 
+ c_de prodct_mastr61.description%type;
+ c_pro prodct_mastr61.profile_percent%type;
+ c_un prodct_mastr61.unit_measure%type;
+ c_qty prodct_mastr61.qty_on_hand%type;
+ c_re prodct_mastr61.reorder_lvl%type;
+ c_sell prodct_mastr61.sell_price%type;
+ c_co prodct_mastr61.cost_price%type;
+      CURSOR c_customers IS SELECT product_no,description,profile_percent,unit_measure,qty_on_hand,reorder_lvl,sell_price,cost_price FROM prodct_mastr61;
+BEGIN 
+   OPEN c_customers; 
+   LOOP 
+   FETCH c_customers into c_id, c_de,c_pro,c_un,c_qty,c_re,c_sell,c_co; 
+      EXIT WHEN c_customers%notfound; 
+      dbms_output.put_line(c_id|| ' ' ||c_de || ' ' ||c_pro|| ' ' || c_un|| ' ' || c_qty || ' ' ||c_re|| ' ' || c_sell || ' '||c_co); 
+   END LOOP; 
+   CLOSE c_customers;  
+
+END; 
+/
+
+	

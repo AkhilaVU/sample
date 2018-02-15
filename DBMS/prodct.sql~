@@ -1,0 +1,22 @@
+	Declare
+	        product_no varchar2(10); 
+	        description varchar2(15); 
+		profti_percent varchar2(10);
+		unit_measure varchar2(10);
+		qty_on_hand number(10);
+		reorder_lvl number(10);
+		sell_price number(10);
+		cost_price number(10);
+	    
+	Begin
+	    dbms_output.put_line('Enter Product_no');
+	    product_no:=&product_no;
+	
+	if (cost<=3000)
+	    then
+	cost-=200;
+	end if;
+
+	End;
+	/
+

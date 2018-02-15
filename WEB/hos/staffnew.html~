@@ -1,0 +1,155 @@
+<html>
+<head>
+<style>
+body{
+
+background-image: url("staff.jpg");
+ 
+background-size:1370px 652px;
+background-repeat: no-repeat;
+     }
+.viu
+{
+ background-color: green;
+ margin-top:5%; 
+padding:15px 15px;
+margin-left:5%; 
+margin-right:750; 
+margin-bottom:auto;
+border: 4px solid 000000;
+border-color:green;  }
+ul{list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+background-color:#4caf50;
+}
+li{float:left;}
+li a{display:block;
+color:white;
+text-align:right;
+padding:14px 16px;
+text-decoration:none;
+}
+.ex{ 
+  margin-top:auto; 
+padding:0px 1px;
+margin-left:80%; 
+margin-right:auto; 
+margin-bottom:0px; 
+  
+}
+li a:hover:not(.active){background-color:#111;
+}
+.active{background-color:#4caf50;
+}
+.ak{margin-left:1000px;}
+.kr{margin-top:0px;}
+.pk{margin-top:2px;}
+</style>
+</head>
+<body>
+
+<ul>
+<li>
+<a class="active"><img src="heart_beat (1).png" width=20 height=18></a>
+</li>
+<li>
+<a class="active">WESTOHESTER MEDICAL CENTER</a>
+</li>
+<div class="ex">
+<li><a class="active">New Staff</a>
+</li>
+<li><a  href="hos61.html">Home</a>
+</li>
+</div>
+</ul>
+<h1>
+<center>
+Staff Registration</h1>
+</center>
+<div class="viu">
+<center>
+<form>
+<table>
+<tr>
+<td>
+First Name  :
+</td>
+<td>
+<input type="text" name="sfirstname" required="">
+</td>
+</tr>
+<tr>
+<td>
+Last Name :
+</td>
+<td>
+<input type="text" name="slastname" >
+</td>
+</tr>
+<tr>
+<td>
+Department :
+</td>
+<td>
+<input type="text" name="sdepartment" required="">
+</td>
+</tr>
+<tr>
+<td>
+Phone no :
+</td>
+<td>
+<input type="text" name="sphoneno" required="" >
+</td>
+</tr>
+<tr>
+<td>
+Duety time :
+</td><td>
+
+<input type="text" name="stime" required="">
+</td>
+</tr>
+<tr>
+<td>
+Email id :
+</td>
+<td>
+<input type="email" name="semail" >
+</td>
+</tr>
+<tr>
+<td>
+User Name :
+</td>
+<td>
+<input type="password" name="susername" required="">
+</td>
+</tr>
+<tr>
+<td>
+Password :
+</td>
+<td>
+<input type="password" name="spassword" required="">
+</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<input type="submit" value="Submit" name="ssubmit" >
+<input type="reset" value="Reset" name="sreset" >
+</td>
+</tr>
+</table>
+</form>
+</center>
+</div>
+
+</center>
+</html>

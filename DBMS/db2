@@ -1,0 +1,713 @@
+ 
+  1.	create table client_master61(
+					client_no varchar2(10) PRIMARY KEY CHECK(client_no like 'c%'),
+					name varchar2(10) NOT NULL,
+					address1 varchar2(10),
+					address2 varchar2(10),
+					city varchar2(10),
+					pincode number(10),
+					state varchar2(10),
+					Bal_due number(7)
+				   );
+
+	Table created.
+
+
+2.	create table prodct_mastr61(
+					product_no varchar2(10) CHECK(product_no like 'p%'),
+					description varchar2(15) not null,
+					profti_percent varchar2(10),
+					unit_measure varchar2(10),
+					qty_on_hand number(10),
+					reorder_lvl number(10),
+					sell_price number(10),
+					cost_price number(10)
+				    );
+
+	Table created.
+
+
+
+3.	create table salesman_mastr61(
+					salesman_no varchar(8) PRIMARY KEY CHECK(salesman_no like 's%'),
+					salesman_name varchar2(10) not null,
+					address1 varchar2(5) not null,
+                                        City varchar2(7),pincode number(8),
+                                        State varchar2(9),Sal_amt number(10) not null,
+					Tgt_to_get number(10) not null,Ttd_sales not null,
+					Remarks varchar2(8));
+
+
+4.	create table sales_odr61(
+				  order_no varchar2(6) PRIMARY KEY CHECK(order_no like 'o%'),
+				  order_date date,client_no varchar2(6) REFERENCES client_master61(client_no),
+ 				  Dely_addr varchar2(6),
+				  salesman_no varchar2(6) REFERENCES salesman_mastr61(salesman_no),
+				  Dely_type varchar2(6)  DEFAULT 'F' check(dely_type in('P','f')),
+				  billed_yn varchar2(4),
+				  Dely_date date,
+				  order_status varchar2(10) check(order_status in('inprocess','fulfilled','backorder','cancelled')));
+
+
+5.	 create table sales_odr_details61(
+					order_no varchar(10) REFERENCES sales_odr61(order_no),
+					product_no varchar(15) REFERENCES prodct_mastr61(product_no),
+					Qty_ordered number(7),qty_number number(7),product_rate number(7));
+	Table created.
+
+
+ 6.   alter table client_mastr61 rename to clientmaster61;
+
+        Table altered.
+
+  7.   alter table sales_odr61 add CONSTRAINT check_o CHECK(order_date<Dely_date);
+
+	Table altered.
+
+  8.   alter table prodct_mastr61 add constraint check_c CHECK(cost_price>0);
+
+	Table altered.
+  
+  9. alter table prodct_mastr61 add constraint check_ch CHECK(cost_price is not null);
+
+	Table altered.
+
+
+  10.   alter table prodct_mastr61 add constraint check_se CHECK(sell_price>0);
+
+	Table altered.
+
+
+  11.	insert into client_master61 values(
+					     'c00001','Ivan bayross','wandon','worli',
+					     'mumbai',450005,'Maharashtra',15000
+					  );
+
+	1 row created.
+
+	 insert into client_master61 values(
+					     'c00002','Vandana saitwa','Don street','bandra',
+					     'madras',780001,'TamilNadu',0
+                                          );
+
+	1 row created.
+
+	insert into client_master61 values(
+					     'c00003','Pramadajagust','Mondon','bDadar','mumbai',
+                                              450007,'Maharashtra',5000
+                                          );
+
+	1 row created.
+
+	insert into client_master61 values(
+					     'c00004','basu navindgi','jerome','juhu','mumbai',
+                                              450009,'Maharashtra',0);
+
+	1 row created.
+
+	insert into client_master61 values(
+					     'c00005','ravisreedharan','dadar','dadra','delhi',
+					      100003,'delhi',2000
+					  );
+
+	1 row created.
+
+	insert into client_master61 values(
+					     'c00006','rukmini','rourk','bandra','mumbai',
+					      450002,'Maharashtra',0
+                                          );
+
+	1 row created.
+
+
+
+
+  12.	select * from client_master61;
+
+	CLIENT_NO  NAME 		ADDRESS1	     ADDRESS2		  CITY	PINCODE STATE			BAL_DUE
+	---------- -------------------- -------------------- -------------------- ---------- ---------- -------------------- ----------
+	c00001	   Ivan bayross 	wandon		     worli		  mumbai 450005 Maharashtra		  15000
+	c00002	   Vandana saitwa	Don street	     bandra		  madras 780001 TamilNadu		      0
+	c00003	   Pramadajagust	Mondon		     bDadar		  mumbai 450007 Maharashtra		   5000
+	c00004	   basu navindgi	jerome		     juhu		  mumbai 450009 Maharashtra		      0
+	c00005	   ravisreedharan	dadar		     dadra		  delhi  100003 delhi			   2000
+	c00006	   rukmini		rourk		     bandra		  mumbai 450002 Maharashtra		      0
+
+
+
+
+   
+
+
+	
+   13.	 insert into prodct_mastr61 values('p00001','1.44 floppies',5,'piece',100,20,525,500);
+
+	 1 row created.
+
+	 SQL> insert into prodct_mastr61 values('p03453','monitors',6,'piece',10,3,12000,11280);
+
+	 1 row created.
+
+	 SQL> insert into prodct_mastr61 values('p45789','mouse',5,'piece',20,5,1050,1000);
+
+	 1 row created.
+
+	 SQL> insert into prodct_mastr61 values('p44783','keyboards',5,'piece',100,20,3150,3050);
+
+	 1 row created.
+
+	 SQL> insert into prodct_mastr61 values('p45123','cd drive',2,'piece',10,3,5250,5100);
+
+	 1 row created.
+
+	 SQL> insert into prodct_mastr61 values('p35412','540 HDD',2.5,'piece',10,3,8400,8000);
+
+	 1 row created.
+
+	
+
+   9.    SQL> select * from prodct_mastr61;
+
+	
+        PRODUCT_NO DESCRIPTION	   PROFTI_PER UNIT_MEASU QTY_ON_HAND REORDER_LVL SELL_PRICE COST_PRICE
+	---------- --------------- ---------- ---------- ----------- ----------- ---------- ----------
+	p00001	   1.44 floppies   5	      piece		 100	      20	525	   500
+	p03453	   monitors	   6	      piece		  10	       3      12000	 11280
+	p45789	   mouse	   5	      piece		  20	       5       1050	  1000
+	p44783	   keyboards	   5	      piece		 100	      20       3150	  3050
+	p45123	   cd drive	   2	      piece		  10	       3       5250	  5100
+	p35412	   540 HDD	   2.5	      piece		  10	       3       8400	  8000
+
+	6 rows selected.
+
+
+   
+ 
+
+   10.	SQL> insert into salesman_mastr61 values('s00001','kiran','a/14','worli',450001,'bombay',3000,100,50,'Good');
+
+	1 row created.
+
+	SQL> insert into salesman_mastr61 values('s00002','maneesh','j-65','Nariman',450001,'bombay',3000,200,100,'Good');
+
+	1 row created.
+
+	SQL> insert into salesman_mastr61 values('s00004','Ashish','a/5','juhu',400041,'bombay',3000,200,150,'Good');
+
+	1 row created.
+
+	 insert into salesman_mastr61 values('s00003','ravi','p-7','bandra',400003,'bombay',3000,200,100,'Good');
+	1 row created.
+
+
+
+
+   11.	select * from salesman_mastr61;
+
+	
+	SALESMAN_N SALESMAN_N ADDRESS1	 CITY	       PINCODE STATE	     SAL_AMT TGT_TO_GET  TTD_SALES REMARKS
+	---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+	s00001	   kiran      a/14	 worli		450001 bombay		3000	    100 	50 Good
+	s00002	   maneesh    j-65	 Nariman	450001 bombay		3000	    200        100 Good
+	s00004	   Ashish     a/5	 juhu		400041 bombay		3000	    200        150 Good
+	s00003	   ravi       p-7	 bandra 	400003 bombay		3000	    200        100 Good
+
+
+
+   
+ 13.	insert into sales_odr61 values('o19001','12-jan-96','c00001','wandon','s00001','f','N','20-jan-96','inprocess');
+
+	1 row created.
+
+	insert into sales_odr61 values('o19002','25-jan-96','c00002','Don street','s00002','P','N','27-jan-96','cancelled');
+
+	1 row created.
+
+	insert into sales_odr61 values('o46865','18-Feb-96','c00003','Mandon','s00003','f','Y','20-Feb-96','fulfilled');
+
+	1 row created.
+
+	insert into sales_odr61 values('o19003','3-apr-96','c00001','jerome','s00001','f','Y','07-APR-96','fulfilled');
+
+	1 row created.
+
+	SQL> insert into sales_odr61 values('o46866','20-may-96','c00004','dadar','s00002','P','N','22-may-96','cancelled');
+
+	1 row created.
+
+	SQL> insert into sales_odr61 values('o19008','24-may-96','c00005','rourk','s00004','f','N','26-may-96','inprocess');
+
+	1 row created.
+
+
+
+  14.	 select * from sales_odr61;
+
+	ORDER_ ORDER_DAT CLIENT DELY_ADDR   SALESM DELY_T BILL DELY_DATE  ORDER_STATUS
+	--------------------------------------------------------------------------------
+	o19002 25-JAN-96 c00002 Don street  s00002 P      N    27-JAN-96         cancelled
+
+	o46865 18-FEB-96 c00003 Mandon	    s00003 f      Y    20-FEB-96         fulfilled
+
+	o19003 03-APR-96 c00001 jerome	    s00001 f      Y    07-APR-96         fulfilled
+
+	o46866 20-MAY-96 c00004 dadar	    s00002 P      N    22-MAY-96         cancelled
+
+	o19008 24-MAY-96 c00005 rourk	    s00004 f      N    26-MAY-96	 inprocess
+
+	o19001 12-JAN-96 c00001 wandon	    s00001 f      N    20-JAN-96	 inprocess
+
+
+	6 rows selected.
+
+
+
+
+  15.	
+
+  16.	insert into sales_odr_details61 values('o19001','p00001',4,4,525);
+
+	1 row created.
+
+	SQL> insert into sales_odr_details61 values('o19002','p00001',10,0,525);
+
+	1 row created.
+
+	SQL> insert into sales_odr_details61 values('o46865','p00001',10,10,525);
+
+	1 row created.
+
+	SQL> insert into sales_odr_details61 values('o46865','p03453',4,4,1050);
+
+	1 row created.
+
+	SQL> insert into sales_odr_details61 values('o19003','p03453',2,2,1050);
+
+	1 row created.
+
+	SQL> insert into sales_odr_details61 values('o19008','p00001',10,5,525);
+
+	1 row created.
+
+	
+  17.	select * from sales_odr_details61;
+
+	ORDER_NO   PRODUCT_NO	   QTY_ORDERED QTY_NUMBER PRODUCT_RATE
+	---------- --------------- ----------- ---------- ------------
+	o19001	   p00001		     4		4	   525
+	o19002	   p00001		    10		0	   525
+	o46865	   p00001		    10	       10	   525
+	o46865	   p03453		     4		4	  1050
+	o19003	   p03453		     2		2	  1050
+	o19008	   p00001		    10		5	   525
+
+	6 rows selected.
+
+
+ 
+ 22.    select salesman_name from salesman_mastr61 where salesman_name LIKE('_a%');
+
+	Output :
+	SALESMAN_N
+	----------
+	maneesh
+	ravi
+
+  23.	 select name from client_master61 where name LIKE('r%') and city='delhi';
+
+	Output :
+	NAME
+	--------------------
+	ravisreedharan
+
+ .. 24  select name,Address1,Address2 from client_master61 where city='delhi' or city='Maharashtra';
+	
+	NAME		     ADDRESS1		  ADDRESS2
+	-------------------- -------------------- --------------------
+	Ivan bayross	     wandon		  worli
+	Pramadajagust	     Mondon		  bDadar
+	basu navindgi	     jerome		  juhu
+	ravisreedharan	     dadar		  dadra
+	rukmini 	     rourk		  bandra
+
+  25. 	select description from prodct_mastr61 where cost_price>5000;
+
+
+	DESCRIPTION
+	---------------
+	monitors
+	cd drive
+	540 HDD
+
+
+  26.    select * from sales_odr61 where order_date>='01-may-96' and order_date<='31-may-96';
+
+	ORDER_ ORDER_DAT CLIENT_NO  DELY_ADDR	    SALESM DELY_T BILL DELY_DATE  ORDER_STATUS
+	-------------------------------------------------------------------------------------
+	o46866 20-MAY-96 c00004     dadar	    s00002 P	  N    22-MAY-96  cancelled
+
+	o19008 24-MAY-96 c00005     rourk	    s00004 f	  N    26-MAY-96   inprocess
+
+	
+  27.   select * from salesman_mastr61 where salesman_no in('s00001','s00002');
+
+	SALESMAN_N SALESMAN_N ADDRE CITY   PINCODE STATE	SAL_AMT TGT_TO_GET TTD_SALES REMARKS
+	---------- --------
+	s00001	   kiran      a/14  worli	450001 bombay	       3000	   100         50    Good
+
+	s00002	   maneesh    j-65  Nariman	450001 bombay	       3000	   200         100   Good
+
+
+ 28.   select description from prodct_mastr61 where sell_price>2000 and sell_price<=5000;
+
+	 DESCRIPTION
+	---------------
+	keyboards
+
+
+  29.  select description,sell_price,sell_price+sell_price*0.2 as new_sellprice from prodct_mastr61 where sell_price>3000;
+
+
+	DESCRIPTION	SELL_PRICE NEW_SELLPRICE
+	--------------- ---------- -------------
+	monitors	     12000	   14400
+	keyboards	      3150	    3780
+	cd drive	      5250	    6300
+	540 HDD 	      8400	   10080
+
+ 30.   select count(product_no) from prodct_mastr61;
+
+	COUNT(PRODUCT_NO)
+	-----------------
+		6
+
+  31.  select count(order_no) from sales_odr61 where order_status='fulfilled';
+
+	COUNT(ORDER_NO)
+	---------------
+	      2
+  32.  select avg(cost_price) as avg_cost_price from prodct_mastr61;
+
+	AVG_COST_PRICE
+	-------------
+  	 4821.66667
+
+	
+
+		Exp.No : 4 DATE MANIPULATION
+		*****************************
+
+a)
+query:
+	select order_no,to_char(order_date,'DAY')order_day 
+	from sales_odr61;
+
+output:
+	ORDER_ ORDER_DAY
+	------ ---------
+	o46866 MONDAY
+	o19008 FRIDAY
+	o19001 FRIDAY
+	o19002 THURSDAY
+	o46865 SUNDAY
+	o19003 WEDNESDAY
+	
+	
+
+
+	6 rows selected.
+
+
+b)
+query:
+	select to_char(dely_date,'MONTH')month,dely_date
+        from sales_odr61;
+
+output:
+
+	DELY__MON DELY_DATE
+	--------- ---------
+	MAY	  22-MAY-96
+	MAY	  26-MAY-96
+	FEBRUARY  20-FEB-96
+	JANUARY   27-JAN-96
+	JANUARY   20-JAN-96
+	APRIL	  07-APR-96
+	
+	
+
+
+	6 rows selected.
+
+c)
+query:
+	select to_char(order_date,'dd/mm/yy')order_date from sales_odr61;
+
+Output:
+
+	ORDER_DA
+	--------
+	20/05/96
+	24/05/96
+	12/01/96
+	25/01/96
+	18/02/96
+	03/04/96
+	
+
+	6 rows selected.
+
+
+d) 
+query:
+
+ 	select distinct sysdate+15 from sales_odr61;
+
+output:	
+	SYSDATE+1
+	---------
+	12-NOV-17
+
+e) 
+Query:
+	  select dely_date-order_date from sales_odr61;
+ 
+output:
+	  DAY_ELAPSED
+	 ------------
+	     2
+	     2
+	     8
+	     2
+	     2
+
+
+		Exp.No:5   having and group by clause
+	*****************************************************
+
+ Table creation:
+
+	create table item_order61(
+				customeer_name varchar(20),
+				address varchar(10),item varchar(10),
+				price number(10));
+
+	Table created.
+
+ Insertion:
+
+	insert into item_order61 values('basu','worli','monitor',1000);
+
+	1 row created.
+
+	 insert into item_order61 values('ivan','juhu','keyboard',800);
+
+	1 row created.
+
+	insert into item_order61 values('ivan','worli','printer',1500);
+
+	1 row created.
+
+	 insert into item_order61 values('bayross','wandon','printer',1500);
+
+	1 row created.
+
+	 insert into item_order61 values('basu','dadar','mouse',500);
+
+	1 row created.
+	 insert into item_order61 values('vandana','wandon','monitor',1000);
+
+	1 row created.
+
+	 insert into item_order61 values('vandana','wandon','keyboard',800);
+
+	1 row created.
+
+selection: 
+
+	 select * from item_order61;
+
+	CUSTOMEER_NAME	     ADDRESS	ITEM		PRICE
+	-------------------- ---------- ---------- ----------
+	basu		     worli	monitor 	 1000
+	ivan		     juhu	keyboard	  800
+	ivan		     worli	printer 	 1500
+	bayross 	     wandon	printer 	 1500
+	basu		     dadar	mouse		  500
+	vandana 	     wandon	monitor 	 1000
+	vandana 	     wandon	keyboard	  800
+	bayross 	     juhu	mouse		  500
+
+	8 rows selected.
+
+a)
+Query:
+	 select item,sum(price) from item_order61 group by item;
+
+Output:
+
+	ITEM	   SUM(PRICE)
+	---------- ----------
+	keyboard	 1600
+	printer 	 3000
+	monitor 	 2000
+	mouse		 1000
+
+
+b)	
+Query:
+	select customeer_name,count(item) from item_order61 group by customeer_name having customeer_name='ivan';
+
+output:
+
+	CUSTOMEER_NAME	     COUNT(ITEM)
+	-------------------- -----------
+	ivan			       2
+ 
+c)
+Query:
+	select address,count(item) from item_order61 group by address having address='juhu';
+
+output:
+
+	ADDRESS    COUNT(ITEM)
+---------- -----------
+juhu		     2
+
+
+
+d)
+Query:
+	select customeer_name,sum(price) from item_order61 group by customeer_name having sum(price)>2000;
+
+output:
+
+	
+	CUSTOMEER_NAME	     SUM(PRICE)
+	-------------------- ----------
+	ivan			   2300
+
+
+
+	  Exp.No:6 sub quries
+	************************
+
+ a)
+Query:
+	select name,address1,address2,city,pincode from client_master61 
+	where client_no IN(select client_no from sales_odr61 where order_no='o19001');
+output:
+
+	NAME		     ADDRESS1		  ADDRESS2	       CITY   PINCODE
+	-----------          -------------     -----------------  --------- -----------
+	Ivan bayross	     wandon		  worli 	       mumbai 450005
+
+
+b)
+Query:
+	select name from client_master61 
+	where client_no IN(select client_no from sales_odr61 where order_date<'01-may-96');
+
+output:
+
+	NAME
+	--------------------
+	Ivan bayross
+	Vandana saitwa
+	Pramadajagust
+
+
+ c)
+Query:
+	select client_no,name from client_master61 
+	where client_no IN(select client_no from sales_odr61 where order_no
+	IN(select order_no from sales_odr_details61 where product_no IN
+	(select product_no from prodct_mastr61 where description='1.44 floppies')));
+
+output:
+	CLIENT_   NAME
+	------- ----------------
+	c00005	ravisreedharan
+	c00001	ivan bayross
+	c00002	vandana saitwa
+	c00003	pramadajagust
+
+
+d)
+Query:
+	select product_no,description from prodct_mastr61 
+	where product_no NOT IN(select product_no from sales_odr_details61 
+	where qty_number>0);
+output:
+
+	PRODUCT_NO DESCRIPTION
+	---------- ---------------
+	p35412	   540 HDD
+	p44783	   keyboards
+	p45123	   cd drive
+	p45789	   mouse
+
+
+e)
+query:
+	select name from clientmaster61
+	 where client_no IN(select client_no from sales_odr61 where order_no IN(
+	select order_no from sales_odr_details61 
+	where(qty_ordered*product_rate)>=10000));
+output:
+
+	no rows selected
+
+
+
+	 exp.No: 7 Views in SQL
+	**************************
+
+
+a)
+Query:
+	create view client_master_view61 as select client_no,name,city 
+	from  client_master61;
+Outout:
+
+        View created.
+Query:
+	select * from client_master_view61
+
+output:
+
+	CLIENT_ NAME		 CITY
+	------- ---------------- --------
+	c00002	vandana saitwa	 madras
+	c00003	pramadajagust	 mumbai
+	c00004	basu navindgi	 mumbai
+	c00005	ravisreedharan	 delhi
+	c00006	rukmini 	 mumbai
+	c00001	ivan bayross	 mumbai
+
+	6 rows selected.
+
+
+b)
+query:
+	update client_master_view61 
+	set name='Akhila' where client_no='c00001';
+output:
+
+	1 row updated.
+
+query:
+	 select * from client_master_view61 ;
+
+output:
+
+	CLIENT_NO  NAME 		CITY
+	---------- -------------------- ----------
+	c00001	   Akhila		mumbai
+	c00002	   Vandana saitwa	madras
+	c00003	   Pramadajagust	mumbai
+	c00004	   basu navindgi	mumbai
+	c00005	   ravisreedharan	delhi
+	c00006	   rukmini		mumbai
+
+	6 rows selected.

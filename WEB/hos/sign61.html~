@@ -1,0 +1,95 @@
+<html>
+<head>
+<style>
+body{
+
+background-image: url("s630_DDRB_2017_V1_report.jpg");
+ 
+background-size:1400px,100px;
+background-repeat: no-repeat;
+     }
+ul{list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+background-color:#4caf50;
+}
+li{float:left;}
+li a{display:block;
+color:white;
+text-align:right;
+padding:14px 16px;
+text-decoration:none;
+}
+.ex{ 
+   margin-top:auto; 
+padding:0px 1px;
+margin-left:94%; 
+margin-right:auto; 
+margin-bottom:0px; 
+  
+}
+li a:hover:not(.active){background-color:#111;
+}
+.active{background-color:#4caf50;
+}
+.ak{margin-left:1000px;}
+.kr{margin-top:0px;}
+.pk{margin-top:2px;}
+</style>
+</head>
+<body>
+
+<ul>
+<li>
+<a class="active"><img src="heart_beat (1).png" width=20 height=18></a>
+</li>
+<li>
+<a class="active">WESTOHESTER MEDICAL CENTER</a>
+</li>
+<div class="ex" >
+<li><a class="active"  name="#back">
+Home</a>
+</li></div>
+
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+<table>
+<tr>
+<td colspan=45></td>
+<td>
+<a href="logind.html">
+<img src="bigstock-Portrait-of-young-woman-doctor-70264798-300x300.jpg" width=100 height=100></a></td>
+</tr>
+<tr>
+<td colspan=45></td>
+<td><b>
+<font color="red" size=5>
+DOCTOR</font></b>
+</td></tr>
+<tr><td colspan=20></td><td>
+<a href="logins.html">
+<img src="ESI2.jpg" width=100 height=100></a></td>
+<td colspan=5></td>
+<td><b>
+<font color="red" size=5>
+STAFF</font></b>
+</td>
+<td colspan=150></td>
+<td><a href="loginu.html">
+<img src="ESI3.jpg" width=100 height=100>
+</td></a><td colspan=15></td>
+<td><b>
+<font color= "red" size=5>
+USER</font></b>
+</td>
+</tr>
+</table>
+</center>
+</html>

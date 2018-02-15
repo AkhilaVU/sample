@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<!--[if IE 6]><![endif]-->
+<!--[if lt IE 7]>      <html lang="en" class="no-js ie l-ie9 l-ie8 l-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js ie ie7 l-ie9 l-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js ie ie8 l-ie9"> <![endif]-->
+<!--[if IE 9]>         <html lang="en" class="no-js ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+  <title>Request an appointment | Northwell Health</title>
+  <meta name="google-site-verification" content="-7EK0UqrMphd9pyLm3kNcpBZjnF363cEQVldeXeCYTg" />
+  <meta name="msvalidate.01" content="A998F5F81A53F3CC53326D405586AD40" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/sites/northwell/themes/custom/nslij3/favicon.ico?v=oynj0l" type="image/x-icon" />
+<meta property="og:image" content="https://www.northwell.edu/sites/northwell/themes/custom/nslij3/statics/img/northwell-logo.png" />
+<meta property="twitter:image:src" content="https://www.northwell.edu/sites/northwell/themes/custom/nslij3/statics/img/northwell-logo.png" />
+<link rel="canonical" href="https://www.northwell.edu/find-care/request-an-appointment" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://www.northwell.edu/find-care/request-an-appointment" />
+<meta name="twitter:title" content="Request an appointment" />
+<meta name="twitter:image" content="https://www.northwell.edu/sites/default/files/opengraph/opengraph-twitter.jpg" />
+<meta itemprop="name" content="Request an appointment" />
+    <!-- DNS Prefetching -->
+
+	<!-- analytics -->
+	<link rel="dns-prefetch" href="//cdn.optimizely.com" />
+	<link rel="dns-prefetch" href="//www.google-analytics.com" />
+	<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+	<link rel="dns-prefetch" href="//stats.g.doubleclick.net" />
+
+	<!--[if lte IE 9]>
+	<link rel="prefetch" href="//cdn.optimizely.com" />
+	<link rel="prefetch" href="//www.google-analytics.com" />
+	<link rel="prefetch" href="//www.googletagmanager.com" />
+	<link rel="prefetch" href="//stats.g.doubleclick.net" />
+	<![endif]-->
+
+    <!-- Specify Critical Assets (Chrome-only) -->
+    <link rel="subresource" href="/sites/northwell/themes/custom/nslij3/statics/css/global.css?v=oynj0l" />
+
+	<script>
+	cache_variable = "oynj0l";
+	!function(){var e=document;original_hash=e.location.hash;var a=e.getElementsByTagName("html")[0].className;a=a.replace(/no-js/,"");var n=e.createElement("link"),s="/sites/northwell/themes/custom/nslij3/statics/css/thesans-";n.media="all",n.rel="stylesheet";var t=window.navigator.userAgent;s+=t.indexOf("Android 4.")>-1&&t.indexOf("like Gecko")>-1&&-1===t.indexOf("Chrome")?"ttf.css":"woff.css",n.href=s+"?201605051729",e.head.appendChild(n)}();
+	</script>
+
+<!-- Core CSS -->
+<!--[if IE 9]>
+	<link href="/sites/northwell/themes/custom/nslij3/statics/css/ie9-global-blessed1.css?v=oynj0l" media="all" rel="stylesheet" type="text/css" />
+	<link href="/sites/northwell/themes/custom/nslij3/statics/css/ie9-global.css?v=oynj0l" media="all" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if gt IE 9 | !IE]><!--> <link href="/sites/northwell/themes/custom/nslij3/statics/css/global.css?v=oynj0l" media="all" rel="stylesheet" type="text/css" /> <!--<![endif]-->
+<!--[if lte IE 8]>
+    <link href="/sites/northwell/themes/custom/nslij3/statics/vendors/jReject/css/jquery.reject.css" media="all" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+  <style type="text/css" media="all">
+@import url("https://www.northwell.edu/modules/system/system.base.css?oynj0l");
+@import url("https://www.northwell.edu/modules/system/system.menus.css?oynj0l");
+@import url("https://www.northwell.edu/modules/system/system.messages.css?oynj0l");
+</style>
+<style type="text/css" media="all">
+@import url("https://www.northwell.edu/misc/ui/jquery.ui.core.css?oynj0l");
+@import url("https://www.northwell.edu/misc/ui/jquery.ui.theme.css?oynj0l");
+@import url("https://www.northwell.edu/misc/ui/jquery.ui.datepicker.css?oynj0l");
+</style>
+<style type="text/css" media="all">
+@import url("https://www.northwell.edu/modules/comment/comment.css?oynj0l");
+@import url("https://www.northwell.edu/sites/all/modules/contrib/date/date_api/date.css?oynj0l");
+@import url("https://www.northwell.edu/sites/all/modules/contrib/date/date_popup/themes/datepicker.1.7.css?oynj0l");
+@import url("https://www.northwell.edu/modules/field/theme/field.css?oynj0l");
+@import url("https://www.northwell.edu/sites/all/modules/contrib/mollom/mollom.css?oynj0l");
+@import url("https://www.northwell.edu/modules/node/node.css?oynj0l");
+@import url("https://www.northwell.edu/sites/all/modules/custom/nslij_forms/css/nslij_forms.css?oynj0l");
+@import url("https://www.northwell.edu/sites/all/modules/contrib/views/css/views.css?oynj0l");
+@import url("https://www.northwell.edu/sites/all/modules/contrib/ckeditor/css/ckeditor.css?oynj0l");
+</style>
+<style type="text/css" media="all">
+@import url("https://www.northwell.edu/sites/all/modules/contrib/ctools/css/ctools.css?oynj0l");
+@import url("https://www.northwell.edu/sites/all/modules/contrib/panels/css/panels.css?oynj0l");
+@import url("https://www.northwell.edu/sites/northwell/themes/custom/nslij3/layouts/nslij3_form_landing_page/nslij3_form_landing_page.css?oynj0l");
+@import url("https://www.northwell.edu/sites/all/modules/contrib/webform/css/webform.css?oynj0l");
+</style>
+<link type="text/css" rel="stylesheet" href="/sites/northwell/themes/custom/nslij3/statics/css/template-form-landing-page.css?oynj0l" media="all" />
+<style type="text/css" media="all">/* empty widget__titles causing space issue */ .pane-bean-make-an-appointment-form-page .widget__titles  {display: none; }h1.smcx-modal-h1{color:#53565a!important;}
+</style>
+
+  <script src="//cdn.optimizely.com/js/2394110012.js"></script>
+  <script type="text/javascript" src="https://www.northwell.edu/sites/northwell/themes/custom/nslij3/statics/js/min/jquery-min.js?v=1.12.3"></script>
+<script type="text/javascript" src="https://www.northwell.edu/misc/drupal.js?oynj0l"></script>
+<script type="text/javascript" src="https://www.northwell.edu/misc/ui/jquery.ui.datepicker.min.js?v=1.8.7"></script>
+<script type="text/javascript" src="https://www.northwell.edu/sites/all/modules/custom/nslij_forms/js/bootstrap-multiselect.js?oynj0l"></script>
+<script type="text/javascript" src="https://www.northwell.edu/sites/all/modules/custom/nslij_forms/js/jquery.validate.min.js?oynj0l"></script>
+<script type="text/javascript" src="https://www.northwell.edu/sites/all/modules/custom/nslij_forms/js/script.js?oynj0l"></script>
+<script type="text/javascript" src="https://www.northwell.edu/sites/all/modules/contrib/webform/js/webform.js?oynj0l"></script>
+<script type="text/javascript" src="/sites/northwell/themes/custom/nslij3/statics/js/min/forms-min.js?oynj0l"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+_linkedin_data_partner_id = "58782";
+(function()
+{var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);}
+)();
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"nslij3","theme_token":"BNcgbJIGx-QZS8yG-hfs1gPHij4vGlcM_2wx3evZSLw","js":{"misc\/jquery.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.datepicker.min.js":1,"sites\/all\/modules\/custom\/nslij_forms\/js\/bootstrap-multiselect.js":1,"sites\/all\/modules\/custom\/nslij_forms\/js\/jquery.validate.min.js":1,"sites\/all\/modules\/custom\/nslij_forms\/js\/script.js":1,"sites\/all\/modules\/contrib\/webform\/js\/webform.js":1,"\/sites\/northwell\/themes\/custom\/nslij3\/statics\/js\/min\/forms-min.js":1,"0":1,"\/sites\/northwell\/themes\/custom\/nslij3\/statics\/js\/min\/footer_scripts-min.js":1,"1":1,"2":1,"3":1,"4":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.datepicker.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/custom\/nslij_forms\/css\/nslij_forms.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/northwell\/themes\/custom\/nslij3\/layouts\/nslij3_form_landing_page\/nslij3_form_landing_page.css":1,"sites\/all\/modules\/contrib\/webform\/css\/webform.css":1,"\/sites\/northwell\/themes\/custom\/nslij3\/statics\/css\/template-form-landing-page.css?oynj0l":1,"0":1,"1":1}},"webform":{"conditionals":{"webform-client-form-181626":{"ruleGroups":{"rgid_0":{"andor":null,"actions":{"aid_0":{"target":"webform-component--other","invert":0,"action":"show","argument":""}},"rules":{"rid_0":{"source_type":"component","source":"webform-component--appointment-type","value":"Other","callback":"conditionalOperatorStringEqual"}}}},"sourceMap":{"webform-component--appointment-type":{"rgid_0":"rgid_0"}},"values":[]}}},"urlIsAjaxTrusted":{"\/request-appointment-landing-form":true}});
+//--><!]]>
+</script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-56792671-1', 'auto');
+    //ga('create', 'UA-56792671-1', 'auto', {'allowLinker': true});
+    //ga('require', 'linker');
+    //ga('linker:autoLink', ['billpay.northshorelij.com']);
+
+    ga('require', 'linkid', 'linkid.js');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+
+
+	<script type='text/javascript'>
+	(function (d, t) {
+	  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+	  bh.type = 'text/javascript';
+	  bh.src = '//www.bugherd.com/sidebarv2.js?apikey=gkjxe611fnnb2lxm1ghdma';
+	  s.parentNode.insertBefore(bh, s);
+	  })(document, 'script');
+	</script>
+
+
+
+  <!-- RTP tag -->
+  <script type='text/javascript'>
+  (function(c,h,a,f,i,e){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+   c[a].a=i;c[a].e=e;var g=h.createElement("script");g.async=true;g.type="text/javascript";
+   g.src=f+'?aid='+i;var b=h.getElementsByTagName("script")[0];b.parentNode.insertBefore(g,b);
+   })(window,document,"rtp","//sjrtp4-cdn.marketo.com/rtp-api/v1/rtp.js","northwell");
+
+  rtp('send','view');
+  rtp('get', 'campaign',true);
+  </script>
+  <!-- End of RTP tag -->
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-178241 node-type-page body-page story-blue-orange story-primary--blue story-secondary--orange" >
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TWTHDL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TWTHDL');</script>
+<!-- End Google Tag Manager -->
+
+
+
+    
+
+    <div class="container">
+        <div class="tabs">
+                    </div>
+    </div>
+
+<header id="site-navigation" class="nav--main">
+    <div class="container">
+        <div class="row">
+            <div id="site-logo" class="col-xs-5 col-sm-4">
+				<a href="/"><picture>
+                    <!--[if IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="/sites/northwell/themes/custom/nslij3/statics/img/northwell-logo-limited-horizontal.png" media="(min-width: 768px)" />
+                    <source srcset="/sites/northwell/themes/custom/nslij3/statics/img/northwell-logo-mobile.png" media="(max-width: 767px)" />
+                    <!--[if IE 9]></video><![endif]-->
+                    <img id="site-logo__img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" android-srcset="/img/northwell-logo-mobile.png" class="img-responsive" alt="Northwell Health Logo" />
+                </picture></a>
+            </div>
+        </div>
+        <a href="#" class="open-panel open-panel--burger"><span class="icon-reorder icon-2x"></span></a>
+        <a href="#" class="open-panel open-panel--search"><span class="icon-search icon-2x"></span></a>
+    </div>
+    <div id="site-links">
+        <div class="container">
+            <nav>
+                <div id="top-utility" class="row">
+                    <div class="col-xs-2 hidden-sm hidden-md hidden-lg pull-right">
+                        <a href="#" class="close-panel"><span class="icon-chevron-left icon-large"></span></a>
+                    </div>
+                    <div id="appt" class="col-xs-10 col-sm-8 pull-right">
+                                    	              <div class="region region-header-utility">
+    <div id="block-block-16" class="block block-block">
+
+    
+  <div class="content">
+    <ul class="list-unstyled list-inline" id="utility-nav"><li><a href="/find-care/request-an-appointment"><span class="icon-time hidden-sm hidden-md hidden-lg"> </span>Request an appointment</a></li>
+<li><a href="https://billpay.northwell.edu/paybill.php" target="_blank"><span class="icon-usd hidden-sm hidden-md hidden-lg"> </span>Pay a bill</a></li>
+<li><a href="https://support.northwell.edu/" target="_blank"><span class="icon-gift hidden-sm hidden-md hidden-lg"> </span>Make a gift</a></li>
+</ul>  </div>
+</div>
+  </div>
+            	                            </div>
+                </div>
+
+                        	          <div class="region region-header">
+    
+    <ul id="main-nav" class="list-unstyled list-inline is_open">
+        <li class="active-parent active"><a href="/find-care" class="active-parent-link active">Find care<span class="icon-caret-up"></span><span class="main-nav__arrow"></span></a><span class="icon-chevron-down"></span><div class="main-nav__secondary-nav-wrapper">
+
+            <ul class="main-nav__secondary-nav list-unstyled">
+        <li class="main-nav__secondary-nav__li"><a href="/find-care/find-a-doctor" class="">Find a doctor</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/find-care/conditions-we-treat" class="">Conditions</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/find-care/services-we-offer" class="">Treatments & services</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/find-care/locations" class="">Locations</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/find-care/programs-centers-and-institutes" class="">Programs, centers and institutes</a></li>
+<li class="main-nav__secondary-nav__li active"><a href="/find-care/request-an-appointment" class=" active">Request an appointment</a></li>
+
+    </ul>
+
+</div></li>
+<li class="not-active"><a href="/manage-your-care" class="">Manage your care<span class="icon-caret-up"></span><span class="main-nav__arrow"></span></a><span class="icon-chevron-down"></span><div class="main-nav__secondary-nav-wrapper">
+
+            <ul class="main-nav__secondary-nav list-unstyled">
+        <li class="main-nav__secondary-nav__li"><a href="/manage-your-care/patient-portal" class="">Patient portal</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/manage-your-care/medical-records" class="">Medical records</a></li>
+<li class="main-nav__secondary-nav__li"><a href="https://billpay.northwell.edu/paybill.php" target="_blank" class="">Pay a bill</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/manage-your-care/insurance" class="">Insurance</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/manage-your-care/financial-assistance" class="">Financial aid programs</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/manage-your-care/financial-resources/personal-expense-calculator" class="">Expense calculator</a></li>
+
+    </ul>
+
+</div></li>
+<li class="not-active"><a href="/support-and-resources" class="">Support and resources<span class="icon-caret-up"></span><span class="main-nav__arrow"></span></a><span class="icon-chevron-down"></span><div class="main-nav__secondary-nav-wrapper">
+
+            <ul class="main-nav__secondary-nav list-unstyled">
+        <li class="main-nav__secondary-nav__li"><a href="/support-and-resources/support-groups" class="">Support groups</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/support-and-resources/wellness-and-prevention" class="">Wellness & prevention</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/support-and-resources/accessibility-social-services" class="">Accessibility & social services</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/support-and-resources/healthcare-professional-resources" class="">Healthcare professional resources</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/support-and-resources/find-an-event" class="">Community events & classes</a></li>
+
+    </ul>
+
+</div></li>
+<li class="not-active"><a href="/research-and-education" class="">Research and education<span class="icon-caret-up"></span><span class="main-nav__arrow"></span></a><span class="icon-chevron-down"></span><div class="main-nav__secondary-nav-wrapper">
+
+            <ul class="main-nav__secondary-nav list-unstyled">
+        <li class="main-nav__secondary-nav__li"><a href="http://www.feinsteininstitute.org/" target="_blank" class="">Research</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/research-and-education/clinical-trials-feinstein" class="">Clinical trials</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/research-and-education/donald-and-barbara-zucker-school-of-medicine-at-hofstra-northwell" class="">Medical school</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/research-and-education/graduate-medical-education" class="">Graduate medical education</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/research-and-education/continuing-and-professional-education" class="">Continuing & professional education</a></li>
+
+    </ul>
+
+</div></li>
+<li class="not-active"><a href="/about-northwell-health" class="">About Northwell<span class="icon-caret-up"></span><span class="main-nav__arrow"></span></a><span class="icon-chevron-down"></span><div class="main-nav__secondary-nav-wrapper">
+
+            <ul class="main-nav__secondary-nav list-unstyled">
+        <li class="main-nav__secondary-nav__li"><a href="/about/leadership" class="">Leadership</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/about/commitment-to-excellence" class="">Commitment to excellence</a></li>
+<li class="main-nav__secondary-nav__li"><a href="http://jobs.northwell.edu/" target="_blank" class="">Jobs</a></li>
+<li class="main-nav__secondary-nav__li"><a href="https://support.northwell.edu/" target="_blank" class="">Support Northwell</a></li>
+<li class="main-nav__secondary-nav__li"><a href="/about/news" class="">Newsroom</a></li>
+
+    </ul>
+
+</div></li>
+
+    </ul><noscript><img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=58782&fmt=gif" /></noscript>
+  </div>
+        	    
+                
+<ul id="search-nav" class="nav--hide list-unstyled list-inline">
+    <li class=""><a class="" href="#">All <span class="icon-caret-up"></span></a><span class="icon-chevron-down"></span>
+        <div class="search-nav__secondary-nav-wrapper">
+            <div class="container">
+                <div class="search-form__helper">Search by:</div>
+                <div class="the-search__form-stuff">
+                    <form class="form--search-flyout form-inline" action="/search" data-empty-fields="keywords">
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label class="sr-only">Search Northwell</label>
+                                <input name="keywords" class="form-control form-control--full typeahead" type="text" placeholder="Search Northwell" data-remote-query-directory="All" />
+                            </div>
+                            <div class="form-group form-group--submit col-sm-1">
+                                <button type="submit" class="nw-btn nw-btn--inline nw-btn--icon"><span class="icon-search"></span><span class="sr-only">Search</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class=""><a class="" href="#">Doctors <span class="icon-caret-up"></span></a><span class="icon-chevron-down"></span>
+        <div class="search-nav__secondary-nav-wrapper">
+            <div class="container">
+                <div class="search-form">
+                    <div class="search-form__helper">Search by:
+                        <br class="hidden-sm hidden-md hidden-lg" /><span class="search-form__helper__active">Specialty &amp; insurance</span> &nbsp;
+                        <br class="hidden-sm hidden-md hidden-lg" />| &nbsp; <span class="search-form__swap-form">Name &amp; keyword</span>
+                    </div>
+                    <div class="the-search__form-stuff">
+                        <form class="form--search-flyout form-inline" action="/find-care/find-a-doctor">
+                            <div class="row">
+                                <div class="form-group col-sm-4">
+                                    <label class="sr-only">Select a specialty</label>
+                                    <select id="select-specialty" name="specialty"  class="js-select2 form-control form-control--full">
+                                        <option value="">All specialties</option>
+                                                                                                                                    <option value="acupuncture">Acupuncture</option>
+                                                                                            <option value="addiction-psychiatry">Addiction Psychiatry</option>
+                                                                                            <option value="adolescent-medicine">Adolescent Medicine</option>
+                                                                                            <option value="adult-congenital-heart-disease">Adult Congenital Heart Disease</option>
+                                                                                            <option value="adv-heart-fail-trnsplnt-cardio">Adv Heart Fail Trnsplnt Cardio</option>
+                                                                                            <option value="allergy-and-immunology">Allergy and Immunology</option>
+                                                                                            <option value="anatomic-clinical-pathology">Anatomic Clinical Pathology</option>
+                                                                                            <option value="anesthesiology">Anesthesiology</option>
+                                                                                            <option value="anesthesiology-critical-care-medicine">Anesthesiology Critical Care Medicine</option>
+                                                                                            <option value="audiology">Audiology</option>
+                                                                                            <option value="blood-banking-transfusion-med">Blood Banking Transfusion Med</option>
+                                                                                            <option value="body-imaging">Body Imaging</option>
+                                                                                            <option value="brain-injury-medicine">Brain Injury Medicine</option>
+                                                                                            <option value="cardiac-electrophysiology">Cardiac Electrophysiology</option>
+                                                                                            <option value="cardiology">Cardiology</option>
+                                                                                            <option value="cardiothoracic-anesthesiology">Cardiothoracic Anesthesiology</option>
+                                                                                            <option value="cardiothoracic-surgery">Cardiothoracic Surgery</option>
+                                                                                            <option value="child-abuse-pediatrics">Child Abuse Pediatrics</option>
+                                                                                            <option value="child-adolescent-psychiatry">Child Adolescent Psychiatry</option>
+                                                                                            <option value="child-neurology">Child Neurology</option>
+                                                                                            <option value="child-psychology">Child Psychology</option>
+                                                                                            <option value="chiropractor">Chiropractor</option>
+                                                                                            <option value="clinical-informatics">Clinical Informatics</option>
+                                                                                            <option value="clinical-neurophysiology">Clinical Neurophysiology</option>
+                                                                                            <option value="colon-rectal-surgery">Colon Rectal Surgery</option>
+                                                                                            <option value="cosmetic-and-laser-surgery">Cosmetic and Laser Surgery</option>
+                                                                                            <option value="craniofacial-surgery">Craniofacial Surgery</option>
+                                                                                            <option value="critical-care-medicine">Critical Care Medicine</option>
+                                                                                            <option value="cytopathology">Cytopathology</option>
+                                                                                            <option value="dental-anesthesiology">Dental Anesthesiology</option>
+                                                                                            <option value="dental-medicine">Dental Medicine</option>
+                                                                                            <option value="dermatology">Dermatology</option>
+                                                                                            <option value="dermatopathology">Dermatopathology</option>
+                                                                                            <option value="developmental-behavioral-peds">Developmental Behavioral Peds</option>
+                                                                                            <option value="diagnostic-lab-immunology">Diagnostic Lab Immunology</option>
+                                                                                            <option value="diagnostic-radiology">Diagnostic Radiology</option>
+                                                                                            <option value="dietician-nutrition">Dietician Nutrition</option>
+                                                                                            <option value="eeg-epilepsy">EEG Epilepsy</option>
+                                                                                            <option value="electrodiagnostic-medicine">Electrodiagnostic Medicine</option>
+                                                                                            <option value="emergency-medical-services">Emergency Medical Services</option>
+                                                                                            <option value="emergency-medicine">Emergency Medicine</option>
+                                                                                            <option value="endocrinology-metab-diabetes">Endocrinology Metab Diabetes</option>
+                                                                                            <option value="endodontics">Endodontics</option>
+                                                                                            <option value="endovascular-medicine">Endovascular Medicine</option>
+                                                                                            <option value="facial-plastic-and-reconstructive-surgery">Facial Plastic and Reconstructive Surgery</option>
+                                                                                            <option value="family-medicine">Family Medicine</option>
+                                                                                            <option value="female-pelvic-med-reconst-surg">Female Pelvic Med Reconst Surg</option>
+                                                                                            <option value="foot-and-ankle-surgery">Foot and Ankle Surgery</option>
+                                                                                            <option value="forensic-psychiatry">Forensic Psychiatry</option>
+                                                                                            <option value="gastroenterology">Gastroenterology</option>
+                                                                                            <option value="geriatric-medicine">Geriatric Medicine</option>
+                                                                                            <option value="geriatric-psychiatry">Geriatric Psychiatry</option>
+                                                                                            <option value="gynecologic-oncology">Gynecologic Oncology</option>
+                                                                                            <option value="head-neck-surgery">Head Neck Surgery</option>
+                                                                                            <option value="hematology">Hematology</option>
+                                                                                            <option value="hematology-oncology">Hematology Oncology</option>
+                                                                                            <option value="hospice-palliative-medicine">Hospice Palliative Medicine</option>
+                                                                                            <option value="hospital-medicine">Hospital Medicine</option>
+                                                                                            <option value="infectious-disease">Infectious Disease</option>
+                                                                                            <option value="internal-medicine">Internal Medicine</option>
+                                                                                            <option value="interventional-cardiology">Interventional Cardiology</option>
+                                                                                            <option value="interventional-neuroradiology">Interventional Neuroradiology</option>
+                                                                                            <option value="intra-operative-monitoring">Intra-Operative Monitoring</option>
+                                                                                            <option value="joint-reconstruction">Joint Reconstruction</option>
+                                                                                            <option value="laparoscopic-colon-and-rectal-surgery">Laparoscopic Colon and Rectal Surgery</option>
+                                                                                            <option value="maternal-fetal-medicine">Maternal Fetal Medicine</option>
+                                                                                            <option value="medical-genetics">Medical Genetics</option>
+                                                                                            <option value="medical-oncology">Medical Oncology</option>
+                                                                                            <option value="medical-toxicology">Medical Toxicology</option>
+                                                                                            <option value="musculoskeletal-radiology">Musculoskeletal Radiology</option>
+                                                                                            <option value="np-in-adult-gerontology-acute-care">NP in Adult Gerontology Acute Care</option>
+                                                                                            <option value="np-in-primary-care-adult-gerontology">NP in Primary Care Adult-Gerontology</option>
+                                                                                            <option value="neonatal-perinatal-medicine">Neonatal Perinatal Medicine</option>
+                                                                                            <option value="nephrology">Nephrology</option>
+                                                                                            <option value="neurodevelopmental-disability">Neurodevelopmental Disability</option>
+                                                                                            <option value="neurological-surgery">Neurological Surgery</option>
+                                                                                            <option value="neurology">Neurology</option>
+                                                                                            <option value="neuromuscular-medicine">Neuromuscular Medicine</option>
+                                                                                            <option value="neurooncology">Neurooncology</option>
+                                                                                            <option value="neuropathology">Neuropathology</option>
+                                                                                            <option value="neurophysiology">Neurophysiology</option>
+                                                                                            <option value="neuroradiology">Neuroradiology</option>
+                                                                                            <option value="neurotology">Neurotology</option>
+                                                                                            <option value="nuclear-cardiology">Nuclear Cardiology</option>
+                                                                                            <option value="nuclear-medicine">Nuclear Medicine</option>
+                                                                                            <option value="nuclear-radiology">Nuclear Radiology</option>
+                                                                                            <option value="nurse-anesthetist">Nurse Anesthetist</option>
+                                                                                            <option value="obstetrics-and-gynecology">Obstetrics and Gynecology</option>
+                                                                                            <option value="occupational-medicine">Occupational Medicine</option>
+                                                                                            <option value="oncology">Oncology</option>
+                                                                                            <option value="ophthalmology">Ophthalmology</option>
+                                                                                            <option value="optometrist">Optometrist</option>
+                                                                                            <option value="oral-implant-implant-dentistry">Oral Implant Implant Dentistry</option>
+                                                                                            <option value="oral-maxillofacial-surgery">Oral Maxillofacial Surgery</option>
+                                                                                            <option value="oral-pathology">Oral Pathology</option>
+                                                                                            <option value="orthodontics">Orthodontics</option>
+                                                                                            <option value="orthopaedic-sports-medicine">Orthopaedic Sports Medicine</option>
+                                                                                            <option value="orthopaedic-surgery">Orthopaedic Surgery</option>
+                                                                                            <option value="otolaryngology">Otolaryngology</option>
+                                                                                            <option value="pain-medicine">Pain Medicine</option>
+                                                                                            <option value="pathology-chemical">Pathology - Chemical</option>
+                                                                                            <option value="pathology-clinical">Pathology - Clinical</option>
+                                                                                            <option value="pathology-forensic">Pathology - Forensic</option>
+                                                                                            <option value="pathology-hematology">Pathology - Hematology</option>
+                                                                                            <option value="pathology-hematopathology">Pathology - Hematopathology</option>
+                                                                                            <option value="pathology-molecular-genetic">Pathology - Molecular Genetic</option>
+                                                                                            <option value="pediatric-allergy-immunology">Pediatric Allergy Immunology</option>
+                                                                                            <option value="pediatric-anesthesiology">Pediatric Anesthesiology</option>
+                                                                                            <option value="pediatric-cardiology">Pediatric Cardiology</option>
+                                                                                            <option value="pediatric-cardiothoracic-surg">Pediatric Cardiothoracic Surg</option>
+                                                                                            <option value="pediatric-critical-care-med">Pediatric Critical Care Med</option>
+                                                                                            <option value="pediatric-dental-medicine">Pediatric Dental Medicine</option>
+                                                                                            <option value="pediatric-dermatology">Pediatric Dermatology</option>
+                                                                                            <option value="pediatric-emergency-medicine">Pediatric Emergency Medicine</option>
+                                                                                            <option value="pediatric-endocrinology">Pediatric Endocrinology</option>
+                                                                                            <option value="pediatric-gastroenterology">Pediatric Gastroenterology</option>
+                                                                                            <option value="pediatric-hematology-oncology">Pediatric Hematology Oncology</option>
+                                                                                            <option value="pediatric-infectious-disease">Pediatric Infectious Disease</option>
+                                                                                            <option value="pediatric-nephrology">Pediatric Nephrology</option>
+                                                                                            <option value="pediatric-neurological-surgery">Pediatric Neurological Surgery</option>
+                                                                                            <option value="pediatric-neurology">Pediatric Neurology</option>
+                                                                                            <option value="pediatric-ophthalmology">Pediatric Ophthalmology</option>
+                                                                                            <option value="pediatric-otolaryngology">Pediatric Otolaryngology</option>
+                                                                                            <option value="pediatric-pathology">Pediatric Pathology</option>
+                                                                                            <option value="pediatric-pulmonary-medicine">Pediatric Pulmonary Medicine</option>
+                                                                                            <option value="pediatric-radiology">Pediatric Radiology</option>
+                                                                                            <option value="pediatric-rehabilitation-med">Pediatric Rehabilitation Med</option>
+                                                                                            <option value="pediatric-rheumatology">Pediatric Rheumatology</option>
+                                                                                            <option value="pediatric-surgery">Pediatric Surgery</option>
+                                                                                            <option value="pediatric-urology">Pediatric Urology</option>
+                                                                                            <option value="pediatrics">Pediatrics</option>
+                                                                                            <option value="periodontics">Periodontics</option>
+                                                                                            <option value="physical-rehab-medicine">Physical Rehab Medicine</option>
+                                                                                            <option value="physics">Physics</option>
+                                                                                            <option value="plastic-surgery">Plastic Surgery</option>
+                                                                                            <option value="podiatric-medicine-and-surgery">Podiatric Medicine and Surgery</option>
+                                                                                            <option value="preventive-medicine">Preventive Medicine</option>
+                                                                                            <option value="prosthodontics">Prosthodontics</option>
+                                                                                            <option value="psychiatry">Psychiatry</option>
+                                                                                            <option value="psychology">Psychology</option>
+                                                                                            <option value="psychosomatic-medicine">Psychosomatic Medicine</option>
+                                                                                            <option value="pulmonary-disease">Pulmonary Disease</option>
+                                                                                            <option value="rn-adult-psychiatric-mental-health-nursing">RN Adult Psychiatric Mental Health Nursing</option>
+                                                                                            <option value="radiation-oncology">Radiation Oncology</option>
+                                                                                            <option value="radiologic-physics">Radiologic Physics</option>
+                                                                                            <option value="radiology">Radiology</option>
+                                                                                            <option value="reproductive-endo-infertility">Reproductive Endo Infertility</option>
+                                                                                            <option value="rheumatology">Rheumatology</option>
+                                                                                            <option value="sleep-medicine">Sleep Medicine</option>
+                                                                                            <option value="social-work">Social Work</option>
+                                                                                            <option value="speech-hearing-language">Speech Hearing Language</option>
+                                                                                            <option value="speech-language-pathology">Speech-Language Pathology</option>
+                                                                                            <option value="spinal-cord-injury-medicine">Spinal Cord Injury Medicine</option>
+                                                                                            <option value="spine-surgery">Spine Surgery</option>
+                                                                                            <option value="sports-medicine">Sports Medicine</option>
+                                                                                            <option value="surgery">Surgery</option>
+                                                                                            <option value="surgery-of-the-hand">Surgery of the Hand</option>
+                                                                                            <option value="surgical-assistant-services">Surgical Assistant Services</option>
+                                                                                            <option value="surgical-critical-care">Surgical Critical Care</option>
+                                                                                            <option value="surgical-oncology">Surgical Oncology</option>
+                                                                                            <option value="surgical-pathology">Surgical Pathology</option>
+                                                                                            <option value="thoracic-surgery">Thoracic Surgery</option>
+                                                                                            <option value="transplant-hepatology">Transplant Hepatology</option>
+                                                                                            <option value="undersea-hyperbaric-medicine">Undersea & Hyperbaric Medicine</option>
+                                                                                            <option value="urogynecology">Urogynecology</option>
+                                                                                            <option value="urology">Urology</option>
+                                                                                            <option value="vascular-intervent-radiology">Vascular Intervent Radiology</option>
+                                                                                            <option value="vascular-medicine">Vascular Medicine</option>
+                                                                                            <option value="vascular-neurology">Vascular Neurology</option>
+                                                                                            <option value="vascular-surgery">Vascular Surgery</option>
+                                                                                            <option value="wound-care">Wound Care</option>
+                                                                                                                        </select>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label class="sr-only">Select an insurance</label>
+                                    <select id="select-insurance" name="insurance" class="js-select2 form-control form-control--full">
+                                        <option value="">All insurances</option>
+                                                                                                                                    <option value="1199seiu">1199SEIU</option>
+                                                                                            <option value="access-medicare">Access Medicare</option>
+                                                                                            <option value="aetna-health-insurance">Aetna Health Insurance</option>
+                                                                                            <option value="affinity-health-plan">Affinity Health Plan</option>
+                                                                                            <option value="affinity-health-plan-exchange">Affinity Health Plan (Exchange)</option>
+                                                                                            <option value="agewell-new-york">AgeWell New York</option>
+                                                                                            <option value="amidacare">AmidaCare</option>
+                                                                                            <option value="beechstreet">Beechstreet</option>
+                                                                                            <option value="cigna-healthcare">CIGNA Healthcare</option>
+                                                                                            <option value="careconnect-health-plan">CareConnect Health Plan</option>
+                                                                                            <option value="centerlight-healthcare">CenterLight Healthcare</option>
+                                                                                            <option value="consumer-health-network">Consumer Health Network</option>
+                                                                                            <option value="elderplan">Elderplan</option>
+                                                                                            <option value="emblemhealth-exchange">EmblemHealth (Exchange)</option>
+                                                                                            <option value="emblemhealth-ghi">EmblemHealth (GHI)</option>
+                                                                                            <option value="emblemhealth-hip">EmblemHealth (HIP)</option>
+                                                                                            <option value="empire-blue-cross-blue-shield">Empire Blue Cross Blue Shield</option>
+                                                                                            <option value="empire-blue-cross-blue-shield-exchange">Empire Blue Cross Blue Shield (Exchange)</option>
+                                                                                            <option value="fidelis-care">Fidelis Care</option>
+                                                                                            <option value="fidelis-care-exchange">Fidelis Care (Exchange)</option>
+                                                                                            <option value="health-net-federal-services">Health Net Federal Services</option>
+                                                                                            <option value="healthplus-amerigroup">HealthPlus Amerigroup</option>
+                                                                                            <option value="healthsmart">HealthSmart</option>
+                                                                                            <option value="healthfirst">Healthfirst</option>
+                                                                                            <option value="healthfirst-exchange">Healthfirst (Exchange)</option>
+                                                                                            <option value="humana">Humana</option>
+                                                                                            <option value="island-group-administration-inc">Island Group Administration, Inc</option>
+                                                                                            <option value="island-group-administration-inc">Island Group Administration, Inc.</option>
+                                                                                            <option value="liberty-health-advantage">Liberty Health Advantage</option>
+                                                                                            <option value="magnacare">MagnaCare</option>
+                                                                                            <option value="medicare">Medicare</option>
+                                                                                            <option value="multiplan-inc">MultiPlan Inc.</option>
+                                                                                            <option value="multiplan">Multiplan</option>
+                                                                                            <option value="ny-hotel-trades-council">NY Hotel Trades Council</option>
+                                                                                            <option value="nyship">NYSHIP</option>
+                                                                                            <option value="new-york-state-medicaid">New York State Medicaid</option>
+                                                                                            <option value="oscar">Oscar</option>
+                                                                                            <option value="oscar-health-insurance">Oscar Health Insurance</option>
+                                                                                            <option value="phcs">PHCS</option>
+                                                                                            <option value="partners-health-plan">Partners Health Plan</option>
+                                                                                            <option value="pending">Pending</option>
+                                                                                            <option value="quality-health-plans-of-ny">Quality Health Plans of NY</option>
+                                                                                            <option value="railroad-medicare">Railroad Medicare</option>
+                                                                                            <option value="senior-whole-health">Senior Whole Health</option>
+                                                                                            <option value="the-empire-plan">The Empire Plan</option>
+                                                                                            <option value="touchstone-health">Touchstone Health</option>
+                                                                                            <option value="us-family-health-plan">US Family Health Plan</option>
+                                                                                            <option value="unitedhealthcare">UnitedHealthcare</option>
+                                                                                            <option value="unitedhealthcare-community-plan">UnitedHealthcare (Community Plan)</option>
+                                                                                            <option value="unitedhealthcare-exchange">UnitedHealthcare (Exchange)</option>
+                                                                                            <option value="unitedhealthcare-oxford">UnitedHealthcare (Oxford)</option>
+                                                                                            <option value="wellcare">WellCare</option>
+                                                                                                                        </select>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label class="sr-only">City or zip code</label>
+                                    <input name="zip" placeholder="City or zip code" type="text" value="" class="form-control form-control--full typeahead" data-remote-url="//api.northwell.edu/v1/geo/search"  />
+                                </div>
+                                <div class="form-group form-group--submit col-sm-1">
+                                    <button type="submit" class="nw-btn nw-btn--inline nw-btn--icon"><span class="icon-search"></span><span class="sr-only">Search</span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="search-form hidden">
+                    <div class="search-form__helper">Search by:
+                        <br class="hidden-sm hidden-md hidden-lg" /><span class="search-form__swap-form">Specialty &amp; insurance</span> &nbsp;
+                        <br class="hidden-sm hidden-md hidden-lg" />| &nbsp; <span class="search-form__helper__active">Name &amp; keyword</span>
+                    </div>
+                    <div class="the-search__form-stuff">
+                        <form class="form--search-flyout form-inline" action="/find-care/find-a-doctor/by-name">
+                            <div class="row">
+                                <div class="form-group col-sm-8">
+                                    <label class="sr-only">Search doctors by name or keyword</label>
+                                    <input name="keywords" class="js-submit-on-change form-control form-control--full typeahead" data-remote-query-directory="FAD" type="text" placeholder="Search doctors by name or keyword" />
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label class="sr-only">City or zip code</label>
+                                    <input name="zip" placeholder="City or zip code" type="text" value="" class="form-control form-control--full typeahead" data-remote-url="//api.northwell.edu/v1/geo/search" />
+                                </div>
+                                <div class="form-group form-group--submit col-sm-1">
+                                    <button type="submit" class="nw-btn nw-btn--inline nw-btn--icon"><span class="icon-search"></span><span class="sr-only">Search</span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class=""><a class="" href="#">Locations <span class="icon-caret-up"></span></a><span class="icon-chevron-down"></span>
+        <div class="search-nav__secondary-nav-wrapper">
+            <div class="container">
+                <div class="search-form__helper"><span class="search-form__helper__active">Search all locations</span> &nbsp;
+                    <br class="hidden-sm hidden-md hidden-lg" />| &nbsp; <a href="/find-care/locations">Browse categories</a>
+                </div>
+                <div class="the-search__form-stuff">
+                    <form class="form--search-flyout form-inline" action="/find-care/locations" data-empty-fields="keywords, zip">
+                        <div class="row">
+                            <div class="form-group col-sm-8">
+                                <label class="sr-only">Search all locations</label>
+                                <input name="keywords" class="form-control form-control--full typeahead" type="text" placeholder="Search for a location by name or keyword" data-remote-query-directory="Locations" />
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only">City or zip code</label>
+                                <input name="zip" placeholder="City or zip code" type="text" value="" class="form-control form-control--full typeahead" data-remote-url="//api.northwell.edu/v1/geo/search" />
+                            </div>
+                            <div class="form-group form-group--submit col-sm-1">
+                                <button type="submit" class="nw-btn nw-btn--inline nw-btn--icon"><span class="icon-search"></span><span class="sr-only">Search</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class=""><a class="" href="#">Treatments &amp; services <span class="icon-caret-up"></span></a><span class="icon-chevron-down"></span>
+        <div class="search-nav__secondary-nav-wrapper">
+            <div class="container">
+                <div class="search-form__helper"><span class="search-form__helper__active">Search all treatments &amp; services</span> &nbsp;
+                    <br class="hidden-sm hidden-md hidden-lg" />| &nbsp; <a href="/find-care/services-we-offer">Browse categories</a> &nbsp;
+                    <br class="hidden-sm hidden-md hidden-lg" />| &nbsp; <a href="/find-care/services-we-offer/all">See all treatments &amp; services A-Z</a>
+                </div>
+                <div class="the-search__form-stuff">
+                    <form class="form--search-flyout form-inline" action="/find-care/services-we-offer/search" data-empty-fields="keywords">
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label class="sr-only">Search all treatments &amp; services</label>
+                                <input name="keywords" class="form-control form-control--full typeahead" type="text" placeholder="Search all treatments &amp; services" data-remote-query-directory="Services" />
+                            </div>
+                            <div class="form-group form-group--submit col-sm-1">
+                                <button type="submit" class="nw-btn nw-btn--inline nw-btn--icon"><span class="icon-search"></span><span class="sr-only">Search</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class=""><a class="" href="#">Conditions <span class="icon-caret-up"></span></a><span class="icon-chevron-down"></span>
+        <div class="search-nav__secondary-nav-wrapper">
+            <div class="container">
+                <div class="search-form__helper"><span class="search-form__helper__active">Search all conditions</span> &nbsp;
+                    <br class="hidden-sm hidden-md hidden-lg" />| &nbsp; <a href="/find-care/conditions-we-treat">Browse categories</a> &nbsp;
+					<br class="hidden-sm hidden-md hidden-lg" />| &nbsp; <a href="/find-care/conditions-we-treat/all">See all conditions A-Z</a>
+                </div>
+                <div class="the-search__form-stuff">
+                    <form class="form--search-flyout form-inline" action="/find-care/conditions-we-treat/search" data-empty-fields="keywords">
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label class="sr-only">Search all conditions</label>
+                                <input name="keywords" class="form-control form-control--full typeahead" type="text" placeholder="Search all conditions" data-remote-query-directory="Conditions" />
+                            </div>
+                            <div class="form-group form-group--submit col-sm-1">
+                                <button type="submit" class="nw-btn nw-btn--inline nw-btn--icon"><span class="icon-search"></span><span class="sr-only">Search</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+
+<div class="searchbox">
+    <span class="searchbox-icon"><span class="icon-search"></span></span>
+</div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+<div id="main">
+    <!--div class="container"-->
+
+		
+		  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    
+<div class="panelizer-view-mode node node-full node-page node-178241">
+        
+<div class="panel-display panel-1col clearfix" >
+	
+		
+
+
+      	<div id="nw-page-header" class="nw-page-header--i-could-eat nw-page-header--constellation">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-md-9">
+											<h1>Request an appointment</h1>
+														</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	
+
+		<div id="nw-page-body">
+			<div class="container">
+				<div class="row">
+					<div class="panel-panel story-secondary col-sm-4">
+						<div class="panel-pane pane-block pane-bean-make-an-appointment-form-page"  >
+  
+      
+  
+  <div class="pane-content">
+    
+<div class="">
+    
+    <div class="widget widget--constellation widget--no-constellation">
+        
+				
+        <div class="widget__titles">
+            
+						
+			
+        </div>
+        
+        
+			
+            <div class="widget__body">
+				<p>To request an appointment with any of our physicians, please call us at</p>
+
+<h4><a href="tel:+18883213627">(888)&nbsp;321-DOCS</a></h4>
+
+<p>&nbsp;</p>
+
+<p>Our representatives are available and ready to help on weekdays from 8:00a.m. to 8:00p.m. and weekends from 9:00a.m. to 5:00pm. You may also leave a voicemail message after regular business hours, and we will return your&nbsp;call.</p>
+
+<p>&nbsp;</p>
+
+<p><em>If this is a medical emergency, please&nbsp;call&nbsp;<span class="no-wrap">9-1-1</span>.</em></p>
+            </div>
+		        
+		
+        
+		
+        
+    </div>
+    
+</div>  </div>
+
+  
+  </div>
+					</div>
+					
+					<div class="story-primary col-sm-push-1 col-sm-7 panel-panel">
+						<div class="module promo translucent">
+							<div class="content-padding">
+								<div class="panel-pane pane-node-body"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><h3>Would you like someone to contact you?</h3>
+<p>To request an appointment online, please complete the form below. Once submitted, we will e-mail you a confirmation notice and a representative will contact you by the next business day.</p>
+</div></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-node"  >
+  
+      
+  
+  <div class="pane-content">
+    <div id="node-181626" class="node node-webform node-promoted node-teaser clearfix">
+
+  
+        <h2><a href="/request-appointment-landing-form"></a></h2>
+    
+  
+  <div class="content">
+    <form class="webform-client-form webform-client-form-181626" action="/request-appointment-landing-form" method="post" id="webform-client-form-181626" accept-charset="UTF-8"><div><div  class="form-item webform-component webform-component-markup webform-component---indicates-a-required-field">
+ <p><em><span class="req">*</span> indicates a required field</em></p>
+
+</div>
+<div  class="form-item webform-component webform-component-markup webform-component--basic-information">
+ <h4 style="margin: 25px 0px; padding-bottom: 10px; border-bottom: 1px solid rgb(238, 238, 238); color: rgb(83, 86, 90);">Contact information</h4>
+
+</div>
+<div class='row'><div  class="col-sm-6 form-item webform-component webform-component-textfield webform-component--first-name">
+  <label for="edit-submitted-first-name">Patients first name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" class="form-control form-text required" type="text" id="edit-submitted-first-name" name="submitted[first_name]" value="" size="60" maxlength="128" />
+</div>
+<div  class="col-sm-6 form-item webform-component webform-component-textfield webform-component--last-name">
+  <label for="edit-submitted-last-name">Patients last name <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" class="form-control form-text required" type="text" id="edit-submitted-last-name" name="submitted[last_name]" value="" size="60" maxlength="128" />
+</div>
+</div><div class='row'><div  class="col-sm-6 form-item webform-component webform-component-textfield webform-component--date-of-birth">
+  <label for="edit-submitted-date-of-birth">Date of birth (mm/dd/yyyy) <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" class="form-control form-text required" type="text" id="edit-submitted-date-of-birth" name="submitted[date_of_birth]" value="" size="60" maxlength="128" />
+</div>
+<div  class="col-sm-6 mrg-bot-10 form-item webform-component webform-component-email webform-component--email-address">
+  <label for="edit-submitted-email-address">Email address <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" class="email form-control form-text form-email required" type="email" id="edit-submitted-email-address" name="submitted[email_address]" size="60" />
+</div>
+</div><div class='row'><div  class="col-sm-6 phone-number-wrapper form-item webform-component webform-component-textfield webform-component--phone-numbers">
+  <label for="edit-submitted-phone-numbers">Phone number (000-000-0000) <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" class="form-control form-text required" type="text" id="edit-submitted-phone-numbers" name="submitted[phone_numbers]" value="" size="60" maxlength="128" />
+</div>
+<div  class="col-sm-6 zipcode form-item webform-component webform-component-textfield webform-component--zip">
+  <label for="edit-submitted-zip">Zip <span class="form-required" title="This field is required.">*</span></label>
+ <input required="required" class="form-control form-text required" type="text" id="edit-submitted-zip" name="submitted[zip]" value="" size="60" maxlength="128" />
+</div>
+</div><div  class="form-item webform-component webform-component-markup webform-component--contact-preferences">
+ <h4 style="margin: 25px 0px; padding-bottom: 10px; border-bottom: 1px solid rgb(238, 238, 238); color: rgb(83, 86, 90);">Contact Preferences</h4>
+
+</div>
+<div class='row'><div  class="col-sm-6 col-md-5 form-item webform-component webform-component-radios webform-component--prefered-method-of-contact">
+  <label for="edit-submitted-prefered-method-of-contact">Preferred method of contact <span class="form-required" title="This field is required.">*</span></label>
+ <div id="edit-submitted-prefered-method-of-contact" class="form-radios errorgroup errorgroupc"><div class="form-item form-type-radio form-item-submitted-prefered-method-of-contact">
+ <input required="required" class="errorgroup errorgroupc form-radio" type="radio" id="edit-submitted-prefered-method-of-contact-1" name="submitted[prefered_method_of_contact]" value="phone" />  <label class="option" for="edit-submitted-prefered-method-of-contact-1">Phone </label>
+
+</div>
+<div class="form-item form-type-radio form-item-submitted-prefered-method-of-contact">
+ <input required="required" class="errorgroup errorgroupc form-radio" type="radio" id="edit-submitted-prefered-method-of-contact-2" name="submitted[prefered_method_of_contact]" value="email" />  <label class="option" for="edit-submitted-prefered-method-of-contact-2">Email </label>
+
+</div>
+</div>
+</div>
+<div  class="col-sm-6 col-md-7 form-item webform-component webform-component-select webform-component--best-time-of-day-to-reach-you">
+  <label for="edit-submitted-best-time-of-day-to-reach-you">Best time of day to reach you? </label>
+ <select class="form-control multiselect form-select" multiple="multiple" name="submitted[best_time_of_day_to_reach_you][]" id="edit-submitted-best-time-of-day-to-reach-you" size="4"><option value="morning">Morning</option><option value="afternoon">Afternoon</option><option value="evening">Evening</option></select>
+</div>
+</div><div  class="form-item webform-component webform-component-markup webform-component--appointment-preferences">
+ <h4 style="margin: 25px 0px; padding-bottom: 10px; border-bottom: 1px solid rgb(238, 238, 238); color: rgb(83, 86, 90);">Appointment preferences</h4>
+
+</div>
+<div class='row'><div  class="col-sm-6 col-md-5 form-item webform-component webform-component-select webform-component--what-days-work-best-for-you">
+  <label for="edit-submitted-what-days-work-best-for-you">What days work best for you? </label>
+ <select class="form-control multiselect form-select" multiple="multiple" name="submitted[what_days_work_best_for_you][]" id="edit-submitted-what-days-work-best-for-you" size="4"><option value="mon">Monday</option><option value="tue">Tuesday</option><option value="wed">Wednesday</option><option value="thu">Thursday</option><option value="fri">Friday</option><option value="weekends">Weekends</option></select>
+</div>
+<div  class="col-sm-6 col-md-7 form-item webform-component webform-component-select webform-component--what-times-work-best-for-you">
+  <label for="edit-submitted-what-times-work-best-for-you">What times work best for you? </label>
+ <select class="form-control multiselect form-select" multiple="multiple" name="submitted[what_times_work_best_for_you][]" id="edit-submitted-what-times-work-best-for-you" size="4"><option value="morning">Morning</option><option value="afternoon">Afternoon</option><option value="early evening">Early Evening</option></select>
+</div>
+</div><div class='row'><div  class="col-sm-6 col-md-5 form-item webform-component webform-component-textfield webform-component--physicians-name">
+  <label for="edit-submitted-physicians-name">Physician's name </label>
+ <input class="form-control form-text" type="text" id="edit-submitted-physicians-name" name="submitted[physicians_name]" value="" size="60" maxlength="128" />
+</div>
+<div  class="col-sm-6 col-md-7 form-item webform-component webform-component-select webform-component--specialty-name">
+  <label for="edit-submitted-specialty-name">Specialty name <span class="form-required" title="This field is required.">*</span></label>
+ <select required="required" class="form-control form-select required" id="edit-submitted-specialty-name" name="submitted[specialty_name]"><option value="" selected="selected">- Select -</option><option value="Not sure">Not sure</option><option value="Addiction Psychiatry">Addiction Psychiatry</option><option value="Adolescent Medicine">Adolescent Medicine</option><option value="Allergy and Immunology">Allergy and Immunology</option><option value="Anesthesiology">Anesthesiology</option><option value="Blood Banking/Transfusion Med">Blood Banking/Transfusion Med</option><option value="Body Imaging">Body Imaging</option><option value="Cardiac Electrophysiology">Cardiac Electrophysiology</option><option value="Cardiology">Cardiology</option><option value="Cardiovascular Disease">Cardiovascular Disease</option><option value="Child Abuse Pediatrics">Child Abuse Pediatrics</option><option value="Child Neurology">Child Neurology</option><option value="Child/Adolescent Psychiatry">Child/Adolescent Psychiatry</option><option value="Clinical Neurophysiology">Clinical Neurophysiology</option><option value="Colon/Rectal Surgery">Colon/Rectal Surgery</option><option value="Craniofacial Surgery">Craniofacial Surgery</option><option value="Critical Care Medicine">Critical Care Medicine</option><option value="Cytopathology">Cytopathology</option><option value="Dental Medicine">Dental Medicine</option><option value="Dermatology">Dermatology</option><option value="Dermatopathology">Dermatopathology</option><option value="Developmental/Behavioral Peds">Developmental/Behavioral Peds</option><option value="Diagnostic Lab Immunology">Diagnostic Lab Immunology</option><option value="Diagnostic Radiology">Diagnostic Radiology</option><option value="Dietician/Nutrition">Dietician/Nutrition</option><option value="EEG/Epilepsy">EEG/Epilepsy</option><option value="Electrodiagnostic Medicine">Electrodiagnostic Medicine</option><option value="Emergency Medicine">Emergency Medicine</option><option value="Endocrinology/Metab/Diabetes">Endocrinology/Metab/Diabetes</option><option value="Endovascular Medicine">Endovascular Medicine</option><option value="Family Medicine">Family Medicine</option><option value="Female Pelvic Medicine and Rec">Female Pelvic Medicine and Rec</option><option value="Foot and Ankle Surgery">Foot and Ankle Surgery</option><option value="Forensic Psychiatry">Forensic Psychiatry</option><option value="Gastroenterology">Gastroenterology</option><option value="Geriatric Medicine">Geriatric Medicine</option><option value="Geriatric Psychiatry">Geriatric Psychiatry</option><option value="Gynecologic Oncology">Gynecologic Oncology</option><option value="Head/Neck Surgery">Head/Neck Surgery</option><option value="Hematology">Hematology</option><option value="Hematology/Oncology">Hematology/Oncology</option><option value="Hospice/Palliative Medicine">Hospice/Palliative Medicine</option><option value="Hospital Medicine">Hospital Medicine</option><option value="Infectious Disease">Infectious Disease</option><option value="Internal Medicine">Internal Medicine</option><option value="Interventional Cardiology">Interventional Cardiology</option><option value="Joint Reconstruction">Joint Reconstruction</option><option value="Maternal/Fetal Medicine">Maternal/Fetal Medicine</option><option value="Medical Genetics">Medical Genetics</option><option value="Medical Oncology">Medical Oncology</option><option value="Medical Toxicology">Medical Toxicology</option><option value="Musculoskeletal Radiology">Musculoskeletal Radiology</option><option value="Neonatal/Perinatal Medicine">Neonatal/Perinatal Medicine</option><option value="Nephrology">Nephrology</option><option value="Neurodevelopmental Disability">Neurodevelopmental Disability</option><option value="Neurological Surgery">Neurological Surgery</option><option value="Neurology">Neurology</option><option value="Neuromuscular Medicine">Neuromuscular Medicine</option><option value="Neurooncology">Neurooncology</option><option value="Neuropathology">Neuropathology</option><option value="Neurophysiology">Neurophysiology</option><option value="Neuroradiology">Neuroradiology</option><option value="Neurotology">Neurotology</option><option value="Nuclear Cardiology">Nuclear Cardiology</option><option value="Nuclear Medicine">Nuclear Medicine</option><option value="Nuclear Radiology">Nuclear Radiology</option><option value="Obstetrics and Gynecology">Obstetrics and Gynecology</option><option value="Occupational Medicine">Occupational Medicine</option><option value="Oncology">Oncology</option><option value="Ophthalmology">Ophthalmology</option><option value="Optometrist">Optometrist</option><option value="Oral Pathology">Oral Pathology</option><option value="Oral/Maxillofacial Surgery">Oral/Maxillofacial Surgery</option><option value="Orthodontics">Orthodontics</option><option value="Orthopaedic Surgery">Orthopaedic Surgery</option><option value="Otolaryngology">Otolaryngology</option><option value="Pain Medicine">Pain Medicine</option><option value="Pathology - Anatomic/Clinical">Pathology - Anatomic/Clinical</option><option value="Pathology - Chemical">Pathology - Chemical</option><option value="Pathology - Clinical">Pathology - Clinical</option><option value="Pathology - Forensic">Pathology - Forensic</option><option value="Pathology - Hematology">Pathology - Hematology</option><option value="Pathology - Molecular Genetic">Pathology - Molecular Genetic</option><option value="Pathology - Pediatric">Pathology - Pediatric</option><option value="Pediatric Allergy/Immunology">Pediatric Allergy/Immunology</option><option value="Pediatric Cardiology">Pediatric Cardiology</option><option value="Pediatric Cardiothoracic Surg">Pediatric Cardiothoracic Surg</option><option value="Pediatric Critical Care Med">Pediatric Critical Care Med</option><option value="Pediatric Dental Medicine">Pediatric Dental Medicine</option><option value="Pediatric Emergency Medicine">Pediatric Emergency Medicine</option><option value="Pediatric Endocrinology">Pediatric Endocrinology</option><option value="Pediatric Gastroenterology">Pediatric Gastroenterology</option><option value="Pediatric Hematology/Oncology">Pediatric Hematology/Oncology</option><option value="Pediatric Infectious Disease">Pediatric Infectious Disease</option><option value="Pediatric Nephrology">Pediatric Nephrology</option><option value="Pediatric Neurology">Pediatric Neurology</option><option value="Pediatric Ophthalmology">Pediatric Ophthalmology</option><option value="Pediatric Otolaryngology">Pediatric Otolaryngology</option><option value="Pediatric Pulmonology">Pediatric Pulmonology</option><option value="Pediatric Radiology">Pediatric Radiology</option><option value="Pediatric Rheumatology">Pediatric Rheumatology</option><option value="Pediatric Surgery">Pediatric Surgery</option><option value="Pediatrics">Pediatrics</option><option value="Physical/Rehab Medicine">Physical/Rehab Medicine</option><option value="Plastic Surgery">Plastic Surgery</option><option value="Preventive Medicine">Preventive Medicine</option><option value="Psychiatry">Psychiatry</option><option value="Psychosomatic Medicine">Psychosomatic Medicine</option><option value="Public Health and General Prev">Public Health and General Prev</option><option value="Pulmonary Disease">Pulmonary Disease</option><option value="Radiation Medicine">Radiation Medicine</option><option value="Radiation Oncology">Radiation Oncology</option><option value="Radiology">Radiology</option><option value="Reproductive Endo/Infertility">Reproductive Endo/Infertility</option><option value="Rheumatology">Rheumatology</option><option value="Sleep Medicine">Sleep Medicine</option><option value="Spinal Cord Injury Medicine">Spinal Cord Injury Medicine</option><option value="Spine Surgery">Spine Surgery</option><option value="Sports Medicine">Sports Medicine</option><option value="Surgery">Surgery</option><option value="Surgery of the Hand">Surgery of the Hand</option><option value="Surgical Critical Care">Surgical Critical Care</option><option value="Surgical Oncology">Surgical Oncology</option><option value="Surgical Pathology">Surgical Pathology</option><option value="Thoracic and Cardiac Surgery">Thoracic and Cardiac Surgery</option><option value="Thoracic Surgery">Thoracic Surgery</option><option value="Transplant Hepatology">Transplant Hepatology</option><option value="Urogynecology">Urogynecology</option><option value="Urology">Urology</option><option value="Vascular Medicine">Vascular Medicine</option><option value="Vascular Neurology">Vascular Neurology</option><option value="Vascular Surgery">Vascular Surgery</option><option value="Vascular/Intervent Radiology">Vascular/Intervent Radiology</option><option value="Wound Care">Wound Care</option></select>
+</div>
+</div><div class='row'><div  class="col-sm-6 col-md-5 form-item webform-component webform-component-select webform-component--appointment-type">
+  <label for="edit-submitted-appointment-type">Appointment type </label>
+ <select class="form-control form-select" id="edit-submitted-appointment-type" name="submitted[appointment_type]"><option value="" selected="selected">- None -</option><option value="New Patient Appointment">New Patient Appointment</option><option value="Return Patient Appointment">Return Patient Appointment</option><option value="Follow up after surgery appointment">Follow up after surgery appointment</option><option value="Other">Other</option></select>
+</div>
+<div  class="col-sm-6 form-item webform-component webform-component-textfield webform-component--other">
+  <label for="edit-submitted-other">Other </label>
+ <input class="form-control form-text" type="text" id="edit-submitted-other" name="submitted[other]" value="" size="60" maxlength="128" />
+</div>
+<div  class="col-sm-6 col-md-7 form-item webform-component webform-component-select webform-component--insurance-type">
+  <label for="edit-submitted-insurance-type">Insurance type </label>
+ <select class="form-control form-select" id="edit-submitted-insurance-type" name="submitted[insurance_type]"><option value="No Insurance" selected="selected">No Insurance</option><option value="No fault">No fault</option><option value="AARP">AARP</option><option value="ACE">ACE</option><option value="AIM">AIM</option><option value="APWU">APWU</option><option value="Advantage Health">Advantage Health</option><option value="Aetna">Aetna</option><option value="Affinity Health Plan">Affinity Health Plan</option><option value="AmeriGroup">AmeriGroup</option><option value="AmeriHealth">AmeriHealth</option><option value="Anthem Blue Cross Blue Shield">Anthem Blue Cross Blue Shield</option><option value="Anthem Health Plan">Anthem Health Plan</option><option value="Atlantis Health Plan">Atlantis Health Plan</option><option value="Beech Street">Beech Street</option><option value="Blue Cross Blue Shield">Blue Cross Blue Shield</option><option value="Blue Cross Blue Shield of Illinois">Blue Cross Blue Shield of Illinois</option><option value="Blue Shield of California">Blue Shield of California</option><option value="CIGNA">CIGNA</option><option value="Care Plus">Care Plus</option><option value="CareConnect">CareConnect</option><option value="CareFirst Blue Cross Blue Shield">CareFirst Blue Cross Blue Shield</option><option value="Champus">Champus</option><option value="Consumer Health Network">Consumer Health Network</option><option value="Consumer Health Plan">Consumer Health Plan</option><option value="Corvel">Corvel</option><option value="Coventry Health Care">Coventry Health Care</option><option value="Devon Health">Devon Health</option><option value="Elderplan">Elderplan</option><option value="EmblemHealth Connecticare GHI HIP PerfectHealth Vytra">EmblemHealth Connecticare GHI HIP PerfectHealth Vytra</option><option value="Empire BCBS">Empire BCBS</option><option value="Empire Plan">Empire Plan</option><option value="Evercare">Evercare</option><option value="Fidelis Care">Fidelis Care</option><option value="First Health">First Health</option><option value="GEHA Health Plans">GEHA Health Plans</option><option value="GHI">GHI</option><option value="Galaxy Health Network">Galaxy Health Network</option><option value="Great West Healthcare">Great West Healthcare</option><option value="Guardian">Guardian</option><option value="HIP">HIP</option><option value="Health Net">Health Net</option><option value="Health Plus">Health Plus</option><option value="Healthcare Partners">Healthcare Partners</option><option value="Healthfirst MHI">Healthfirst MHI</option><option value="Horizon">Horizon</option><option value="Horizon Blue Cross Blue Shield">Horizon Blue Cross Blue Shield</option><option value="Humana Health">Humana Health</option><option value="Independence Blue Cross Blue Shield">Independence Blue Cross Blue Shield</option><option value="Island Group">Island Group</option><option value="Liberty Health Advantage">Liberty Health Advantage</option><option value="Local 1199">Local 1199</option><option value="Local 1200">Local 1200</option><option value="Local 1201">Local 1201</option><option value="Local 1202">Local 1202</option><option value="Local 1203">Local 1203</option><option value="Local 1204">Local 1204</option><option value="Local 1205">Local 1205</option><option value="Local 1206">Local 1206</option><option value="Local 147 Construction Workers">Local 147 Construction Workers</option><option value="Local 295">Local 295</option><option value="Local 32BJ">Local 32BJ</option><option value="Local 812 Health Fund">Local 812 Health Fund</option><option value="Local 851">Local 851</option><option value="MDNY">MDNY</option><option value="MVP">MVP</option><option value="MVP-Mohawk Valley Plan">MVP-Mohawk Valley Plan</option><option value="Magellan">Magellan</option><option value="Magna Care">Magna Care</option><option value="Mail Handlers Benefit Plan">Mail Handlers Benefit Plan</option><option value="Medicaid">Medicaid</option><option value="Medicare">Medicare</option><option value="Medicare-Railroad">Medicare-Railroad</option><option value="Metro Plus">Metro Plus</option><option value="MultiPlan PHCS">MultiPlan PHCS</option><option value="Mutual of Omaha">Mutual of Omaha</option><option value="NY Hotel Trades Council">NY Hotel Trades Council</option><option value="National Health Plan">National Health Plan</option><option value="Neighborhood Health Providers">Neighborhood Health Providers</option><option value="One Health Plan">One Health Plan</option><option value="Oxford">Oxford</option><option value="PHCS">PHCS</option><option value="POMCO">POMCO</option><option value="Pacificare">Pacificare</option><option value="Select Pro">Select Pro</option><option value="SelectHealth">SelectHealth</option><option value="Touchstone">Touchstone</option><option value="Tricare">Tricare</option><option value="UHC Empire Plan">UHC Empire Plan</option><option value="US Department of Labor">US Department of Labor</option><option value="UniCare">UniCare</option><option value="United Behavioral Health">United Behavioral Health</option><option value="United HealthCare">United HealthCare</option><option value="United HealthCare Americhoice">United HealthCare Americhoice</option><option value="Value Options">Value Options</option><option value="Vytra">Vytra</option><option value="Wellcare">Wellcare</option><option value="Wellcare of NY">Wellcare of NY</option><option value="Workers Compensation">Workers Compensation</option><option value="Other">Other</option></select>
+</div>
+</div><div class='row'><div  class="col-sm-6 col-md-5 form-item webform-component webform-component-textarea webform-component--visit-reason">
+  <label for="edit-submitted-visit-reason">Visit reason <span class="form-required" title="This field is required.">*</span></label>
+ <div class="form-textarea-wrapper"><textarea required="required" class="form-control form-textarea required" id="edit-submitted-visit-reason" name="submitted[visit_reason]" cols="60" rows="5"></textarea></div>
+</div>
+<div  class="col-sm-6 col-md-7 form-item webform-component webform-component-textarea webform-component--leave-comments">
+  <label for="edit-submitted-leave-comments">Comments </label>
+ <div class="form-textarea-wrapper"><textarea class="form-control form-textarea" id="edit-submitted-leave-comments" name="submitted[leave_comments]" cols="60" rows="5"></textarea></div>
+</div>
+</div><input type="hidden" name="details[sid]" />
+<input type="hidden" name="details[page_num]" value="1" />
+<input type="hidden" name="details[page_count]" value="1" />
+<input type="hidden" name="details[finished]" value="0" />
+<input type="hidden" name="form_build_id" value="form-8XMnoQ-BEHjzMb_OsSV6u4wg6-EHlUJMMO_ygeBs2A0" />
+<input type="hidden" name="form_id" value="webform_client_form_181626" />
+<div class="form-actions"><div class='row'><div class='col-sm-6 text-left'><input class="btn btn-blue form-submit" type="submit" name="op" value="Submit" /></div></div></div></div></form>  </div>
+
+  
+  
+</div>
+  </div>
+
+  
+  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div></div>
+  </div>
+</div>
+  </div>
+
+	<!--/div-->
+</div><!-- /#main  /.container-->
+
+
+<div id="footer" class="container-fluid">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-6 col-md-4" id="contact">
+
+			           <div class="region region-footer-top-left">
+    <div id="block-block-6" class="block block-block">
+
+    
+  <div class="content">
+    <h5><a href="tel:+18883213627">(888) 321-DOCS</a></h5>
+<p>Our representatives are available to schedule your appointment on weekdays from 8am to 8pm and weekends from 9am to 5pm You may also leave a voicemail message after regular business hours, and we will return your call.</p>
+<p><a href="/find-care/request-an-appointment"><strong>Request an appointment</strong></a></p>
+<p><em>If this is a medical emergency, please call 9-1-1.</em></p>
+  </div>
+</div>
+  </div>
+	    
+      </div>
+
+      <div class="col-sm-6 col-md-5">
+        			  <div class="region region-footer-menu-1">
+    <div id="block-menu-menu-footer-menu-1" class="block block-menu">
+
+    
+  <div class="content">
+        <ul class="list-unstyled sitelinks">
+        <li><a href="http://jobs.northwell.edu/" title="" target="_blank">Jobs</a></li>
+<li><a href="/contact-us" title="">Contact us</a></li>
+<li><a href="/about/news" title="">Newsroom</a></li>
+<li><a href="/manage-your-care/patient-portal" title="">Patient portal</a></li>
+<li><a href="/volunteer" title="">Volunteer</a></li>
+<li><a href="https://support.northwell.edu/ways-to-give" title="" target="_blank">Ways to give</a></li>
+<li><a href="https://billpay.northwell.edu/paybill.php" title="" target="_blank">Pay a bill</a></li>
+<li><a href="/support-and-resources/healthcare-professional-resources" title="">Healthcare professional resources</a></li>
+<li><a href="/about/news/alerts" title="">Alerts</a></li>
+<li><a href="/about/commitment-to-excellence/diversity-and-inclusion" title="">Diversity &amp; inclusion</a></li>
+<li><a href="/find-care/services-we-offer/physician-partners" title="">Northwell Health Physician Partners</a></li>
+
+    </ul>  </div>
+</div>
+<div id="block-block-21" class="block block-block">
+
+    
+  <div class="content">
+    <p><span class="social-icons"><a href="https://www.facebook.com/northwellhealth" target="_blank"><span class="icon-facebook"> </span></a> <a href="https://www.twitter.com/northwellhealth" target="_blank"><span class="icon-twitter"> </span></a> <a href="http://instagram.com/northwellhealth" target="_blank"><span class="icon-instagram"> </span></a> <a href="http://www.linkedin.com/company/northwell-health" target="_blank"><span class="icon-linkedin"> </span></a> <a href="https://www.youtube.com/user/nslijhs" target="_blank"><span class="icon-youtube"> </span></a> </span></p>
+  </div>
+</div>
+  </div>
+		      </div>
+
+      <div class="col-sm-4 col-md-3 text-right">
+
+    		    	  <div class="region region-footer-bottom-right">
+    <div id="block-block-11" class="block block-block">
+
+    
+  <div class="content">
+    <p><a class="nw-btn nw-btn--inline employees" href="/employees" style="font-weight: 600!important;">For employees</a></p>
+  </div>
+</div>
+  </div>
+    	
+      </div>
+    </div>
+    <div id="corporate" class="row">
+      <div class="col-sm-12">
+
+        			  <div class="region region-footer-menu-2">
+    <div id="block-menu-menu-footer-menu-2" class="block block-menu">
+
+    
+  <div class="content">
+        <ul class="list-inline">
+        <li><a href="/privacy-policy" title="">Privacy policies &amp; disclaimers</a></li>
+<li><a href="/site-map" title="">Site map</a></li>
+<li><a href="/about/commitment-to-excellence/compliance" title="">Corporate compliance</a></li>
+
+    </ul>  </div>
+</div>
+  </div>
+		
+    	        	  <div class="region region-footer-bottom-left">
+    <div id="block-block-1" class="block block-block">
+
+    
+  <div class="content">
+    <p class="copy">© Copyright 2017 Northwell Health</p>
+  </div>
+</div>
+  </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+  <script type="text/javascript" src="/sites/northwell/themes/custom/nslij3/statics/js/min/footer_scripts-min.js?oynj0l"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (is_ie8) document.write(unescape("%3Cscript src='" + js_path + "min/ie8-min.js?"+ cache_variable + "' type='text/javascript'%3E%3C/script%3E"));
+if (is_ie9) document.write(unescape("%3Cscript src='" + js_path + "min/ie9-min.js?"+ cache_variable + "' type='text/javascript'%3E%3C/script%3E"));
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function ($) { $('.datepicker').datepicker(); })(jQuery);
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+//--><!]]>
+</script>
+
+
+<script type="text/javascript">jQuery.rloader({src: '//cdn.callrail.com/companies/334578073/48dc593fff306a965e15/12/swap.js' });</script>
+
+<!-- Eruptr Dynamic Number Insertion -->
+<script type="text/javascript">jQuery.rloader({src: '//cdn.calltrk.com/companies/222850263/6e0155892f15647620b8/12/swap.js' });</script>
+<!-- End Code -->
+
+<!-- Lightning Bolt Begins -->
+<script type="text/javascript" id="lightning_bolt" src="//cdn-akamai.mookie1.com/LB/LightningBolt.js"></script>
+<!-- Lightning Bolt Ends -->
+
+
+<script>
+// INSTRUCTIONS
+// The VersaTag code should be placed at the top of the <BODY> section of the HTML page.
+// To ensure that the full page loads as a prerequisite for the VersaTag
+// being activated (and the working mode is set to synchronous mode), place the tag at the bottom of the page. Note, however, that this may
+// skew the data for slow-loading pages, and in general is not recommended.
+// If the VersaTag code is configured to run in async mode, place the tag at the bottom of the page before the end of the <BODY > section.
+
+//
+// NOTE: You can test if the tags are working correctly before the campaign launches
+// as follows:  Browse to http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=at, which is
+// a page that lets you set your local machine to 'testing' mode.  In this mode, when
+// visiting a page that includes a VersaTag, a new window will open, showing you
+// the tags activated by the VersaTag and the data sent by the VersaTag tag to the Sizmek servers.
+//
+// END of instructions (These instruction lines can be deleted from the actual HTML)
+
+var versaTag = {};
+versaTag.id = "4217";
+versaTag.sync = 0;
+versaTag.dispType = "js";
+versaTag.ptcl = "HTTPS";
+versaTag.bsUrl = "bs.serving-sys.com/BurstingPipe";
+//VersaTag activity parameters include all conversion parameters including custom parameters and Predefined parameters. Syntax: "ParamName1":"ParamValue1", "ParamName2":"ParamValue2". ParamValue can be empty.
+versaTag.activityParams = {
+//Predefined parameters:
+"OrderID":"","Session":"","Value":"","productid":"","productinfo":"","Quantity":""
+//Custom parameters:
+};
+//Static retargeting tags parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
+versaTag.retargetParams = {};
+//Dynamic retargeting tags parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
+versaTag.dynamicRetargetParams = {};
+// Third party tags conditional parameters and mapping rule parameters. Syntax: "CondParam1":"ParamValue1", "CondParam2":"ParamValue2". ParamValue can be empty.
+versaTag.conditionalParams = {};
+</script>
+<script id="ebOneTagUrlId" src="https://secure-ds.serving-sys.com/SemiCachedScripts/ebOneTag.js"></script>
+<noscript>
+<iframe src="https://bs.serving-sys.com/BurstingPipe?cn=ot&amp;onetagid=4217&amp;ns=1&amp;activityValues=$$Value=[Value]&amp;OrderID=[OrderID]&amp;Session=[Session]&amp;ProductID=[ProductID]&amp;ProductInfo=[ProductInfo]&amp;Quantity=[Quantity]$$&amp;retargetingValues=$$$$&amp;dynamicRetargetingValues=$$$$&amp;acp=$$$$&amp;"style="display:none;width:0px;height:0px"></iframe>
+</noscript>
+
+<script type="text/javascript">
+(function() {
+  var didInit = false;
+  function initMunchkin() {
+    if(didInit === false) {
+      didInit = true;
+      Munchkin.init('309-LVL-470');
+    }
+  }
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//munchkin.marketo.net/munchkin.js';
+  s.onreadystatechange = function() {
+    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+      initMunchkin();
+    }
+  };
+  s.onload = initMunchkin;
+  document.getElementsByTagName('head')[0].appendChild(s);
+})();
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1649710231983671', {
+em: 'socialmedia@northwell.edu'
+});
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1649710231983671&ev=PageView&noscript=1"/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4caff8cd52","applicationID":"56771653","transactionName":"NFFTbEdTD0UHVkdcDA0bcFtBWw5YSUVSUgY8WVBWVFUERDlbXFEGPEJYXUJtEVcBUA==","queueTime":0,"applicationTime":1779,"atts":"GBZQGg9JHEs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+

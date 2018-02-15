@@ -1,0 +1,222 @@
+<html>
+<head>
+<style>
+body{
+
+background-image: url("user.jpg");
+ 
+background-size:1470px 900px;
+background-repeat: no-repeat;
+
+     }
+.vu
+{
+ background-color: green;
+ margin-top:auto; 
+padding:15px 15px;
+margin-left:5%; 
+margin-right:750; 
+margin-bottom:auto;
+border: 4px solid 000000;
+border-color:green; }
+ul{list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+background-color:#4caf50;
+}
+li{float:left;}
+li a{display:block;
+color:white;
+text-align:right;
+padding:14px 16px;
+text-decoration:none;
+}
+
+.ex{ 
+  margin-top:auto; 
+padding:0px 1px;
+margin-left:80%; 
+margin-right:auto; 
+margin-bottom:0px; 
+  
+}
+li a:hover:not(.active){background-color:#111;
+}
+.active{background-color:#4caf50;
+}
+.ak{margin-left:1000px;}
+.kr{margin-top:0px;}
+.pk{margin-top:2px;}
+</style>
+</head>
+<body>
+
+<ul>
+<li>
+<a class="active"><img src="heart_beat (1).png" width=20 height=18></a>
+</li>
+<li>
+<a class="active">WESTOHESTER MEDICAL CENTER</a>
+</li>
+<div class="ex">
+<li><a class="active">New User</a>
+</li>
+<li><a  href="hos61.html">Home</a>
+</li>
+</div>
+</ul>
+<h1>
+<center>
+User Registration</h1>
+</center>
+<div class="vu">
+<form method="post">
+<table>
+<tr>
+<td>
+OP No. :
+</td>
+<td>
+<input type="text" name="uop" required="">
+</td>
+</tr>
+<tr>
+<td>
+First Name  :
+</td>
+<td>
+<input type="text" name="ufirstname" required="">
+</td>
+</tr>
+<tr>
+<td>
+Last Name :
+</td>
+<td>
+<input type="text" name="ulastname" >
+</td>
+</tr>
+<tr>
+<td>
+ Age :
+</td>
+<td>
+<input type="text" name="uage" >
+</td>
+</tr>
+<tr>
+<td>
+Gender :
+</td>
+<td>
+<input name="ugender" value="Male" type="radio"> Male
+                
+       <input name="ugender" value="Female" type="radio">  Female
+               
+         <input name="ugender" value="Others" type="radio"> Others
+</td>
+</tr>
+<tr>
+<td>
+Blood Group:
+</td>
+<td>
+<select style="width: 60px; margin-left: 80px;">
+
+                   <option value="a+">A+</option>
+                    
+                   <option value="a-">A-</option>
+                    
+                   <option value="b+">B+</option>
+                    
+                   <option value="b-">B-</option>
+                   
+                   <option value="o+">O+</option>
+                    
+                   <option value="o-">O-</option>
+                    
+                   <option value="ab+">AB+</option>
+                    
+                   <option value="ab-">AB-</option>
+                
+                  </select>
+
+</td>
+</tr>
+<tr>
+<td>
+Phone no :
+</td>
+<td>
+<input type="text" name="uphoneno" required="" >
+</td>
+</tr>
+<tr>
+<td>
+Address :</td>
+<td><textarea rows="3" cols="20" name="uaddress"></textarea>
+</td>
+</tr>
+
+<tr>
+<td>
+User Name :
+</td>
+<td>
+<input type="text" name="uusername" >
+</td>
+</tr>
+<tr>
+<td>
+Password :
+</td>
+<td>
+<input type="password" name="upassword" >
+</td>
+</tr>
+</table>
+
+<fieldset style="width: 720px; color:red; background-color:white;margin top:50px; margin-left: 22%;">
+
+<legend>Medical Details</legend>
+</td>
+
+<center>
+Taking any medications, currently?<br>
+
+<input type="radio" name="med" value="yes" />YES<br>
+
+<input type="radio" name="med" value="no" />NO<br>
+
+<hr>
+<p>If yes, please list it here</p>
+
+<p>Please list all medications (DRUG NAME, DOSE, FREQUENCY, ROUTE) that you are currently prescribed, if more than one, separate them with a comma.</p>
+<br>
+Write :
+<textarea style="width: 720px;" rows="10" cols="100"></textarea>
+
+</div>
+<br>
+
+
+<button type="submit">
+submit
+</button>
+
+<button type="reset">
+Reset
+</button>
+<br>
+</center>
+
+</fieldset>
+</center>
+
+
+
+</table>
+</form>
+
+</html>

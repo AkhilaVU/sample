@@ -1,0 +1,108 @@
+<html>
+<head>
+<style>
+body{
+background-color:green;
+background-image: url("s300_Doctors_in_coat-_web.jpg");
+ 
+background-size:1500px,1500px;
+background-repeat: no-repeat;
+     }
+ul{list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+background-color:#4caf50;
+}
+li{float:left;}
+li a{display:block;
+color:white;
+text-align:right;
+padding:14px 16px;
+text-decoration:none;
+}
+
+li a:hover:not(.active){background-color:#111;
+}
+.active{background-color:#4caf50;
+}
+.us
+{
+ background-image: url("bigstock-Portrait-of-young-woman-doctor-70264798-300x300.jpg");
+ background-repeat:no-repeat;
+ margin-top:5%; 
+padding:60px 65px;
+margin-left:60%; 
+margin-right:auto; 
+margin-bottom:auto;
+border: 4px solid 000000;
+border-color:green;  }
+</style>
+</head>
+<body>
+
+<ul>
+<li>
+<a class="active"><img src="heart_beat (1).png" width=20 height=18></a>
+</li>
+<li>
+<a class="active">WESTOHESTER MEDICAL CENTER</a>
+</li>
+<table>
+<tr>
+<td colspan=400></td><td>
+<li><a class="active">Doctor</a></li><li><a  href="hos61.html">Home</a>
+</li></td>
+</tr>
+</table>
+</ul>
+<h1>
+<br>
+<font color="green">
+Welcome Doctor</h1>
+
+<div class="us">
+
+<form name="login">
+<table>
+<tr>
+<td>
+<h1>
+User Name</h1>
+</td>
+<td>
+</td>
+<td>:
+</td>
+<td>
+<td><div class="gh">
+<input type="text" name="user-name" placeholder=" Enter  User Name" required=" "></div>
+</td>
+</tr>
+<tr>
+<td><h1>
+Password </h1></td>
+<td>
+</td><td>:</td>
+<td>
+</td>
+<td>
+<input type="password" name="password" required="" placeholder= " Enter  Password ">
+</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td>
+<font color="red">
+New User ?</font></td>
+<td colspan=3>
+</td>
+<td>
+<input type="submit" value="Login">
+</td>
+</tr>
+</table>
+</form>
+</div>
+</html>
